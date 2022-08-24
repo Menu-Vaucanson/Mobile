@@ -90,7 +90,7 @@ body {
 
 .App {
 	width: 100vw;
-	height: calc(98.6vh - 4.5vmax);
+	min-height: calc(98.6vh - 4.5vmax);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -147,7 +147,9 @@ body {
 
 .mySwiper {
 	width: 80vw;
+	align-self: flex-start;
 	height: max-content;
+	margin-top: 5vh;
 }
 
 .swiper-slide {
@@ -169,4 +171,34 @@ a {
 	width: 80vw;
 	align-self: flex-start;
 	margin-top: 5vh;
+}
+
+.Settings {
+	align-self: flex-start;
+	margin-top: 5vh;
+}
+
+.Setting {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 60vw;
+	height: 4vmax;
+	border-radius: 1vmax;
+	padding: 1vmax;
+	font-size: 2vmax;
+	text-shadow: none;
+	background-color: #B3B3B3;
+	margin-top: 1vh;
+	box-shadow: 0 3px 1vmax rgba(0, 0, 0, 0.25);
+}
+
+.check {
+	border-radius: 1vmax;
+	height: 4vmax;
+	width: 4vmax;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
 }
