@@ -5,6 +5,9 @@ import { EffectCards } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-cards";
 
+import MenuLight from '../Themes/Menu/Light';
+import MenuDark from '../Themes/Menu/Dark';
+
 function Menu({ Title, menu, theme }) {
 	if (menu.error === 1) {
 		return (
@@ -22,6 +25,11 @@ function Menu({ Title, menu, theme }) {
 		)
 	});
 
+	let css = MenuLight;
+	if (theme === 'dark') {
+		css = MenuDark;
+	}
+
 	return (
 		<Swiper
 			effect={"cards"}
@@ -29,7 +37,7 @@ function Menu({ Title, menu, theme }) {
 			className="mySwiper"
 		>
 
-			<SwiperSlide key={1}>
+			<SwiperSlide key={1} style={css}>
 				<div className="Menu">
 					<div className="MenuTitle">
 						{Title}
@@ -39,7 +47,7 @@ function Menu({ Title, menu, theme }) {
 					</div>
 				</div>
 			</SwiperSlide>
-			<SwiperSlide key={2}>
+			<SwiperSlide key={2} style={css}>
 				<div className="Menu">
 					<div className="MenuTitle">
 						{Title}

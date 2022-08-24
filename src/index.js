@@ -13,8 +13,8 @@ import AppDark from './Themes/AppDark';
 import Contact from './Components/Contact';
 
 
-window.localStorage.setItem('theme', JSON.stringify('dark'));
-//window.localStorage.clear();
+//window.localStorage.setItem('theme', JSON.stringify('dark'));
+window.localStorage.clear();
 
 let theme = JSON.parse(window.localStorage.getItem('theme'));
 if (theme !== 'dark' && theme !== 'light') {
