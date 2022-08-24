@@ -11,6 +11,7 @@ import Data from './data.json';
 import App from './Themes/App';
 import AppDark from './Themes/AppDark';
 import Contact from './Components/Contact';
+import Informations from './Components/Informations';
 
 
 //window.localStorage.setItem('theme', JSON.stringify('dark'));
@@ -34,6 +35,7 @@ root.render(
 			<Routes>
 				<Route path='/' element={<Menu Title={"Menu du jour"} menu={Data} theme={theme} />}></Route>
 				<Route path='/Contact' element={<Contact theme={theme} />}></Route>
+				<Route path='/Informations' element={<Informations theme={theme} />}></Route>
 				<Route path='/*' element={<E404 />}></Route>
 			</Routes>
 		</div>
