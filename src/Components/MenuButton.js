@@ -3,7 +3,7 @@ import { useState } from 'react';
 import SideMenu from '../Components/SideMenu';
 
 function MenuButton({ theme }) {
-	const [isActive, setisActive] = useState(true);
+	const [isActive, setisActive] = useState(false);
 	function Click() {
 		setisActive(old => !old);
 	}

@@ -7,7 +7,7 @@ import SideMenuButtonDark from '../Themes/SideMenuButton/Dark';
 function SideMenu({ active, theme }) {
 	let css = Object.assign({}, SideMenuLight, { 'transform': '' });
 	if (active) {
-		css = Object.assign({}, css, { 'transform': 'translateX(100vw)' });
+		css = Object.assign({}, css, { 'transform': 'translateX(110vw)' });
 	}
 
 	if (theme === 'dark') {
