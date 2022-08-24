@@ -1,5 +1,5 @@
 const Light = {
-	'color': 'black'
+	'backgroundColor': '#F5FEF5'
 }
 
 export default Light;

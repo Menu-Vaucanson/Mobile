@@ -10,7 +10,7 @@ function MenuButton({ theme }) {
 
 	return (
 		<div>
-			<SideMenu active={isActive} theme={theme} />
+			<SideMenu active={isActive} theme={theme} isActive={setisActive} />
 			<div className="MenuButton" onClick={Click}>
 				<div></div>
 				<div></div>

@@ -1,7 +1,9 @@
 import Dish from './Dish';
 
-import MenuTitleLight from '../Themes/MenuTitle/Light';
-import MenuTitleDark from '../Themes/MenuTitle/Dark';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCards } from "swiper";
+import "swiper/css";
+import "swiper/css/effect-cards";
 
 function Menu({ Title, menu, theme }) {
 	if (menu.error === 1) {
@@ -14,26 +16,40 @@ function Menu({ Title, menu, theme }) {
 		)
 	}
 
-	const Dishs = menu.menu.map(dish => {
+	const Dishs = menu.menu.map((dish, i) => {
 		return (
-			<Dish dish={dish} theme={theme} />
+			<Dish key={i} dish={dish} theme={theme} />
 		)
-	})
-
-	let css = MenuTitleLight;
-	if (theme === 'dark') {
-		css = MenuTitleDark;
-	}
+	});
 
 	return (
-		<div className="Menu">
-			<div className="MenuTitle" style={css}>
-				{Title}
-			</div>
-			<div className='MenuDishs'>
-				{Dishs}
-			</div>
-		</div>
+		<Swiper
+			effect={"cards"}
+			modules={[EffectCards]}
+			className="mySwiper"
+		>
+
+			<SwiperSlide key={1}>
+				<div className="Menu">
+					<div className="MenuTitle">
+						{Title}
+					</div>
+					<div className='MenuDishs'>
+						{Dishs}
+					</div>
+				</div>
+			</SwiperSlide>
+			<SwiperSlide key={2}>
+				<div className="Menu">
+					<div className="MenuTitle">
+						{Title}
+					</div>
+					<div className='MenuDishs'>
+						{Dishs}
+					</div>
+				</div>
+			</SwiperSlide>
+		</Swiper>
 	)
 }
 

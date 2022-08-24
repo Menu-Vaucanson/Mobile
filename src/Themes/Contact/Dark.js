@@ -1,5 +1,5 @@
 const Dark = {
-	'color': '#F5FEF5'
+	'backgroundColor': '#403F4C'
 }
 
 export default Dark;
