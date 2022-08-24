@@ -24,7 +24,7 @@ function Informations({ theme }) {
 	}
 	const dish4 = {
 		name: 'Fiabilitée',
-		content: 'Le menu affiché n’est qu’une copie de ceux publiés par l\'établissement, aucune information n’est donc garantie',
+		content: 'Le menu affiché n’est qu’une copie de ceux publiés par l\'établissement, aucune information n’est donc garantie.',
 		style: 'blue',
 		styleDark: 'blueDark'
 	}
