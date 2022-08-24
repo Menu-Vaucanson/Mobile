@@ -106,14 +106,14 @@ body {
 }
 
 .MenuError {
-	background-color: #D9D9D9;
-	border-radius: 1vmax;
 	font-family: 'Fira Mono Medium';
+	text-align: center;
 	padding: 1vmax;
 }
 
 .MenuTitle {
 	font-family: 'Fira Mono Medium';
+	text-align: center;
 	padding: 1vmax;
 }
 

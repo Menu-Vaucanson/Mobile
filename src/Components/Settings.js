@@ -4,12 +4,16 @@ import CustomCheck from "./CustomCheck";
 
 
 function Settings({ theme, settheme }) {
-	let actualTheme = 0
+	let actualTheme = false
 	if (theme === 'dark') {
-		actualTheme = 1;
+		actualTheme = true;
 	}
+
+	const actualEvening = JSON.parse(window.localStorage.getItem('evening'));
+
+
 	const [Button1, setButton1] = useState(actualTheme);
-	const [Button2, setButton2] = useState(false);
+	const [Button2, setButton2] = useState(actualEvening);
 
 	function DarkClick() {
 		setButton1(old => {
@@ -38,6 +42,9 @@ function Settings({ theme, settheme }) {
 	}
 
 	function CleanClick() {
+		settheme('light');
+		setButton1(false)
+		setButton2(false);
 		window.localStorage.clear();
 	}
 

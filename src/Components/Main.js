@@ -1,9 +1,9 @@
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import MenuBar from './MenuBar';
 import Menu from './Menu';
 import E404 from './404';
-import Data from '../data.json';
 import Contact from './Contact';
 import Informations from './Informations';
 import Settings from './Settings';
@@ -11,7 +11,7 @@ import Settings from './Settings';
 import App from '../Themes/App';
 import AppDark from '../Themes/AppDark';
 
-import { useState } from 'react';
+import Data from '../data.json';
 
 function Main() {
 	let [theme, settheme] = useState(JSON.parse(window.localStorage.getItem('theme')));
@@ -28,7 +28,7 @@ function Main() {
 			<MenuBar text='Menu Vaucanson' theme={theme} />
 			<div className='App' style={css}>
 				<Routes>
-					<Route path='/' element={<Menu Title={"Menu du jour"} menu={Data} theme={theme} />}></Route>
+					<Route path='/' element={<Menu menus={[Data]} theme={theme} />}></Route>
 					<Route path='/Contact' element={<Contact theme={theme} />}></Route>
 					<Route path='/Informations' element={<Informations theme={theme} />}></Route>
 					<Route path='/Settings' element={<Settings theme={theme} settheme={settheme} />}></Route>

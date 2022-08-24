@@ -8,27 +8,84 @@ import "swiper/css/effect-cards";
 import MenuLight from '../Themes/Menu/Light';
 import MenuDark from '../Themes/Menu/Dark';
 
-function Menu({ Title, menu, theme }) {
-	if (menu.error === 1) {
-		return (
-			<div className="Menu">
-				<div className="MenuError">
-					{menu.errorMessage}
-				</div>
-			</div>
-		)
-	}
-
-	const Dishs = menu.menu.map((dish, i) => {
-		return (
-			<Dish key={i} dish={dish} theme={theme} />
-		)
-	});
+function Menu({ menus, theme }) {
+	const isEvening = JSON.parse(window.localStorage.getItem('evening'));
 
 	let css = MenuLight;
 	if (theme === 'dark') {
 		css = MenuDark;
 	}
+
+	const rMenus = [];
+
+	menus.forEach(menu => {
+		if (menu.error === 1) {
+			rMenus.push(
+				<SwiperSlide key={1} style={css}>
+					<div className="Menu">
+						<div className="MenuTitle">
+							{menu.date}
+						</div>
+						<div className="MenuError">
+							{menu.errorMessage}
+						</div>
+					</div>
+				</SwiperSlide>
+			)
+		} else {
+			rMenus.push(
+				<SwiperSlide key={1} style={css}>
+					<div className="Menu">
+						<div className="MenuTitle">
+							Menu du jour
+						</div>
+						<div className='MenuDishs'>
+							{menu.menu.map((dish, i) => {
+								return (
+									<Dish key={i} dish={dish} theme={theme} />
+								);
+							})
+							}
+						</div>
+					</div>
+				</SwiperSlide>
+			)
+		}
+		if (isEvening) {
+			if (menu.errorEvening === 1) {
+				rMenus.push(
+					<SwiperSlide key={1} style={css}>
+						<div className="Menu">
+							<div className="MenuTitle">
+								{menu.date}
+							</div>
+							<div className="MenuError">
+								{menu.errorEveningMessage}
+							</div>
+						</div>
+					</SwiperSlide>
+				)
+			} else {
+				rMenus.push(
+					<SwiperSlide key={1} style={css}>
+						<div className="Menu">
+							<div className="MenuTitle">
+								Menu du soir
+							</div>
+							<div className='MenuDishs'>
+								{menu.evening.map((dish, i) => {
+									return (
+										<Dish key={i} dish={dish} theme={theme} />
+									);
+								})
+								}
+							</div>
+						</div>
+					</SwiperSlide>
+				)
+			}
+		}
+	})
 
 	return (
 		<Swiper
@@ -36,27 +93,7 @@ function Menu({ Title, menu, theme }) {
 			modules={[EffectCards]}
 			className="mySwiper"
 		>
-
-			<SwiperSlide key={1} style={css}>
-				<div className="Menu">
-					<div className="MenuTitle">
-						{Title}
-					</div>
-					<div className='MenuDishs'>
-						{Dishs}
-					</div>
-				</div>
-			</SwiperSlide>
-			<SwiperSlide key={2} style={css}>
-				<div className="Menu">
-					<div className="MenuTitle">
-						{Title}
-					</div>
-					<div className='MenuDishs'>
-						{Dishs}
-					</div>
-				</div>
-			</SwiperSlide>
+			{rMenus}
 		</Swiper>
 	)
 }
