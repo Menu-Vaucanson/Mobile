@@ -4,15 +4,78 @@
 }
 
 @font-face {
-	font-family: "Fira Mono Bold";
-	src: url("/public/fonts/FiraMono-Bold.otf");
-}
-
-@font-face {
 	font-family: "Fira Mono Medium";
 	src: url("/public/fonts/FiraMono-Medium.otf");
 }
 
+@font-face {
+	font-family: "Fira Mono Bold";
+	src: url("/public/fonts/FiraMono-Bold.otf");
+}
+
 body {
 	font-family: "Fira Mono Regular";
+	margin: 0;
+	overflow-x: hidden;
+}
+
+.MenuBar {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0.7vh;
+	font-size: 3vmax;
+}
+
+.MenuBarTitle {
+	width: min-content;
+	height: min-content;
+	margin-left: 4vw;
+}
+
+.MenuButton {
+	display: flex;
+	flex-direction: column;
+	width: 4.5vmax;
+	height: 4.5vmax;
+	align-items: flex-start;
+	justify-content: space-evenly;
+}
+
+.MenuButton div {
+	background-color: #3366FE;
+	box-shadow: -4px 4px 4px rgba(0, 75, 204, 0.50);
+	height: 0.6vmax;
+	width: 1.5vmax;
+}
+
+.MenuButton div:nth-child(1) {
+	width: 4.5vmax;
+}
+
+.MenuButton div:nth-child(2) {
+	width: 3vmax;
+}
+
+.SideMenu {
+	position: absolute;
+	top: 5.9vh;
+	left: -100vw;
+	width: 100vw;
+	height: 94.1vh;
+	display: flex;
+	transition: 200ms;
+	flex-direction: column;
+	align-items: center;
+}
+
+.SideMenu div {
+	text-align: center;
+	width: 60vw;
+	height: max-content;
+	border-radius: 1vmax;
+	padding: 1vmax;
+	font-size: 2vmax;
+	text-shadow: none;
+	margin-top: 2vh;
 }
