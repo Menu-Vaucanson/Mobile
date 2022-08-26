@@ -5,10 +5,6 @@ import './Stylesheets/index.css';
 
 import Main from './Components/Main';
 
-
-//window.localStorage.setItem('theme', JSON.stringify('dark'));
-//window.localStorage.clear();
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<BrowserRouter>

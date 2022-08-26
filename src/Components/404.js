@@ -1,6 +1,12 @@
-function E404() {
+function E404({ theme }) {
+	let css = {};
+	if (theme === 'dark') {
+		css = {
+			color: '#F5FEF5'
+		}
+	}
 	return (
-		<div>
+		<div style={css}>
 			La page que vous cherchez n'existe pas.
 		</div>
 	)

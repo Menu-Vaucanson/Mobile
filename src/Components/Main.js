@@ -11,8 +11,6 @@ import Settings from './Settings';
 import App from '../Themes/App';
 import AppDark from '../Themes/AppDark';
 
-import Data from '../data.json';
-
 function Main() {
 	let [theme, settheme] = useState(JSON.parse(window.localStorage.getItem('theme')));
 	if (theme !== 'dark' && theme !== 'light') {
@@ -23,16 +21,17 @@ function Main() {
 	if (theme === 'dark') {
 		css = AppDark;
 	}
+
 	return (
 		<div>
-			<MenuBar text='Menu Vaucanson' theme={theme} />
+			<MenuBar theme={theme} />
 			<div className='App' style={css}>
 				<Routes>
-					<Route path='/' element={<Menu menus={[Data]} theme={theme} />}></Route>
+					<Route path='/' element={<Menu theme={theme} />}></Route>
 					<Route path='/Contact' element={<Contact theme={theme} />}></Route>
 					<Route path='/Informations' element={<Informations theme={theme} />}></Route>
 					<Route path='/Settings' element={<Settings theme={theme} settheme={settheme} />}></Route>
-					<Route path='/*' element={<E404 />}></Route>
+					<Route path='/*' element={<E404 theme={theme} />}></Route>
 				</Routes>
 			</div>
 		</div>

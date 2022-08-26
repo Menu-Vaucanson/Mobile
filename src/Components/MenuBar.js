@@ -3,7 +3,7 @@ import MenuButton from '../Components/MenuButton';
 import MenuBarLight from '../Themes/MenuBar/Light';
 import MenuBarDark from '../Themes/MenuBar/Dark';
 
-function MenuBar({ text, theme }) {
+function MenuBar({ theme }) {
 	let css = MenuBarLight;
 	if (theme === 'dark') {
 		css = MenuBarDark;
@@ -13,7 +13,7 @@ function MenuBar({ text, theme }) {
 		<div className="MenuBar" style={css}>
 			<MenuButton theme={theme} />
 			<div className='MenuBarTitle'>
-				{text}
+				Menu Vaucanson
 			</div>
 		</div>
 	)
