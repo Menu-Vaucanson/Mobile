@@ -10,45 +10,38 @@ import MenuDark from '../Themes/Menu/Dark';
 import MenuSwiper from './MenuSwiper';
 
 const url = 'https://menuvox.fr:8080';
-//const url = 'https://192.168.1.89:8080';
 
 function getMenusDate() {
-	const date = new Date();
 	const menus = [];
+	const date = new Date();
+	const date1 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+	const date2 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate() + 1);
+	const date3 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate() + 1);
+	const date4 = new Date(date3.getFullYear(), date3.getMonth(), date3.getDate() + 1);
 	switch (date.getDay()) {
 		case 1:
 			menus.push(getMenu(date.getMonth(), date.getDate()));
-			let date1 = new Date(date.getMonth(), date.getDate() + 1);
 			menus.push(getMenu(date1.getMonth(), date1.getDate()));
-			let date2 = new Date(date1.getMonth(), date1.getDate() + 1);
 			menus.push(getMenu(date2.getMonth(), date2.getDate()));
-			let date3 = new Date(date2.getMonth(), date2.getDate() + 1);
 			menus.push(getMenu(date3.getMonth(), date3.getDate()));
-			let date4 = new Date(date3.getMonth(), date3.getDate() + 1);
 			menus.push(getMenu(date4.getMonth(), date4.getDate()));
 			break;
 
 		case 2:
 			menus.push(getMenu(date.getMonth(), date.getDate()));
-			date1 = new Date(date.getMonth(), date.getDate() + 1);
 			menus.push(getMenu(date1.getMonth(), date1.getDate()));
-			date2 = new Date(date1.getMonth(), date1.getDate() + 1);
 			menus.push(getMenu(date2.getMonth(), date2.getDate()));
-			date3 = new Date(date2.getMonth(), date2.getDate() + 1);
 			menus.push(getMenu(date3.getMonth(), date3.getDate()));
 			break;
 
 		case 3:
 			menus.push(getMenu(date.getMonth(), date.getDate()));
-			date1 = new Date(date.getMonth(), date.getDate() + 1);
 			menus.push(getMenu(date1.getMonth(), date1.getDate()));
-			date2 = new Date(date1.getMonth(), date1.getDate() + 1);
 			menus.push(getMenu(date2.getMonth(), date2.getDate()));
 			break;
 
 		case 4:
 			menus.push(getMenu(date.getMonth(), date.getDate()));
-			date1 = new Date(date.getMonth(), date.getDate() + 1);
 			menus.push(getMenu(date1.getMonth(), date1.getDate()));
 			break;
 
@@ -78,7 +71,6 @@ function getMenu(month, day) {
 }
 
 function Menu({ theme }) {
-
 	const [menu, setMenu] = useState('');
 
 	useEffect(() => {
@@ -97,6 +89,7 @@ function Menu({ theme }) {
 		Promise.all(getMenusDate()).then(data => {
 			const datas = [];
 			data.forEach(d => {
+				console.log(d);
 				if (d) {
 					datas.push(d);
 				}
@@ -105,7 +98,6 @@ function Menu({ theme }) {
 			setMenu(<MenuSwiper menus={datas} isEvening={isEvening} css={css} theme={theme} />);
 		})
 	}, [theme])
-
 
 	return (menu);
 }
