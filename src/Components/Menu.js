@@ -9,8 +9,8 @@ import MenuDark from '../Themes/Menu/Dark';
 
 import MenuSwiper from './MenuSwiper';
 
-const url = 'http://menuvox.fr:8080';
-//const url = 'http://192.168.1.89:8080';
+const url = 'https://menuvox.fr:8080';
+//const url = 'https://192.168.1.89:8080';
 
 function getMenusDate() {
 	const date = new Date();
