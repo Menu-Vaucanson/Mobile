@@ -89,7 +89,6 @@ function Menu({ theme }) {
 		Promise.all(getMenusDate()).then(data => {
 			const datas = [];
 			data.forEach(d => {
-				console.log(d);
 				if (d) {
 					datas.push(d);
 				}
