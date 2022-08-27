@@ -20,7 +20,17 @@ function setMenu(d) {
 }
 
 function setMenuEvening(d) {
-	return 'Menu de ce soir';
+	const today = new Date();
+	const tomorrow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
+	const date = d.substring(0, 2);
+
+	if (today.getDate() == date) {
+		return 'Menu de ce soir';
+	} else if (tomorrow.getDate() == date) {
+		return 'Menu de demain soir';
+	} else {
+		return 'Menu du soir du ' + d;
+	}
 }
 
 function MenuSwiper({ menus, isEvening, css, theme }) {
