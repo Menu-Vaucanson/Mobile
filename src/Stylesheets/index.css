@@ -118,6 +118,38 @@ body {
 	padding: 1vmax;
 }
 
+.MenuRate {
+	margin-bottom: 2vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.Stars {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.Star {
+	width: 10vw;
+	height: 10vw;
+	padding: 2vw;
+}
+
+.SendButton {
+	background-color: #D9D9D9;
+	padding: 5vw 5vh;
+	border-radius: 2vmax;
+	font-size: 2.5vmax;
+	font-family: 'Fira Mono Medium';
+}
+
+.Sent {
+	font-family: 'Fira Mono Medium';
+}
+
 .Dish {
 	display: flex;
 	flex-direction: column;

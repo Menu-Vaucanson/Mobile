@@ -4,6 +4,7 @@ import { Swiper } from "swiper/react";
 import { EffectCards } from "swiper";
 
 import Dish from './Dish';
+import Rate from './Rate';
 
 function setMenu(d) {
 	const today = new Date();
@@ -66,6 +67,7 @@ function MenuSwiper({ menus, isEvening, css, theme }) {
 							})
 							}
 						</div>
+						<Rate month={menu.month} day={menu.day} evening={false} />
 					</div>
 				</SwiperSlide>
 			)
@@ -100,6 +102,7 @@ function MenuSwiper({ menus, isEvening, css, theme }) {
 								})
 								}
 							</div>
+							<Rate month={menu.month} day={menu.day} evening={true} />
 						</div>
 					</SwiperSlide>
 				)

@@ -65,7 +65,10 @@ function getMenu(month, day) {
 		axios.get(`${url}/menus/${month + 1}/${day}`).catch(err => {
 			resolve(null);
 		}).then(response => {
-			resolve(response.data.data);
+			const data = response.data.data;
+			data.month = month;
+			data.day = day;
+			resolve(data);
 		});
 	});
 }
