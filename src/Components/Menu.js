@@ -63,20 +63,16 @@ function getMenusDate() {
 function getMenu(month, day) {
 	return new Promise(resolve => {
 		axios.get(`${url}/menus/${month + 1}/${day}`).catch(err => {
-			if (err.code === 'ERR_BAD_REQUEST') {
-				resolve({ error: 1, errorMessage: 'aucun menu pour ce jour', errorEvening: 1, errorEveningMessage: 'aucun menu pour ce diner', date: new Date().getDate().toString() });
-			} else if (err.code === 'ERR_INTERNET_DISCONNECTED') {
-				resolve({ error: 1, errorMessage: 'vous n\'avez plus de connection', errorEvening: 1, errorEveningMessage: 'vous n\'avez plus de connection', date: new Date().getDate().toString() });
-			} else {
-				resolve({ error: 1, errorMessage: 'erreur inconu : ' + err.code + ' veillez nous contacter', errorEvening: 1, errorEveningMessage: 'erreur inconu : ' + err.code + ' veillez nous contacter', date: new Date().getDate().toString() });
-			}
+			resolve(null);
 		}).then(response => {
-			if (typeof response === 'undefined') {
-				return ({ error: 1, errorMessage: 'erreur inconu : ' + response + ' veillez nous contacter', errorEvening: 1, errorEveningMessage: 'erreur inconu : ' + response + ' veillez nous contacter', date: new Date().getDate().toString() });
+			if (typeof response == 'undefined') {
+				resolve(null);
+			} else {
+				const data = response.data.data;
+				data.month = month;
+				data.day = day;
+				resolve(data);
 			}
-			const data = response.data.data;
-			data.month = month;
-			data.day = day;
 		});
 	});
 }
@@ -104,6 +100,13 @@ function Menu({ theme }) {
 					datas.push(d);
 				}
 			})
+			if (!datas.length) {
+				datas.push({
+					"error": 1,
+					"errorMessage": "Aucun menu à afficher",
+					"errorEvening": 1
+				});
+			}
 			sessionStorage.setItem('menuCache', JSON.stringify(datas));
 			setMenu(<MenuSwiper menus={datas} isEvening={isEvening} css={css} theme={theme} />);
 		})
