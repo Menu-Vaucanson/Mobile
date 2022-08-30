@@ -63,6 +63,7 @@ function getMenusDate() {
 function getMenu(month, day) {
 	return new Promise(resolve => {
 		axios.get(`${url}/menus/${month + 1}/${day}`).catch(err => {
+			console.log(err);
 			resolve(null);
 		}).then(response => {
 			if (typeof response == 'undefined') {
