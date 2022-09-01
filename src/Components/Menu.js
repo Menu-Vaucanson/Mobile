@@ -50,11 +50,11 @@ function getMenusDate() {
 			break;
 
 		case 6:
-			menus.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, errorEveningMessage: 'Bon week-end !', date: new Date().getDate().toString() });
+			menus.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
 			break;
 
 		default:
-			menus.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, errorEveningMessage: 'Bon week-end !', date: new Date().getDate().toString() });
+			menus.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
 			break;
 	}
 	return menus;
@@ -79,15 +79,21 @@ function getMenu(month, day) {
 }
 
 function Menu({ theme }) {
-	const [menu, setMenu] = useState('');
+	let css = MenuLight;
+	if (theme === 'dark') {
+		css = MenuDark;
+	}
+	const [menu, setMenu] = useState(
+		<div className="MenuWaiting" style={css}>
+			<div className="WaitingError">
+				Récupération des menus en cours...
+			</div>
+		</div>
+	);
 
 	useEffect(() => {
 		const isEvening = JSON.parse(window.localStorage.getItem('evening'));
 
-		let css = MenuLight;
-		if (theme === 'dark') {
-			css = MenuDark;
-		}
 		const cache = JSON.parse(sessionStorage.getItem('menuCache'));
 		if (cache) {
 			setMenu(<MenuSwiper menus={cache} isEvening={isEvening} css={css} theme={theme} />);
@@ -111,7 +117,7 @@ function Menu({ theme }) {
 			sessionStorage.setItem('menuCache', JSON.stringify(datas));
 			setMenu(<MenuSwiper menus={datas} isEvening={isEvening} css={css} theme={theme} />);
 		})
-	}, [theme])
+	}, [theme, css])
 	return (menu);
 }
 

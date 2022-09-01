@@ -235,3 +235,22 @@ a {
 	justify-content: center;
 	color: white;
 }
+
+.MenuWaiting {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80vw;
+	height: max-content;
+	border-radius: 2vmax;
+	background-color: #B3B3B3;
+	align-self: flex-start;
+	margin-top: 5vh;
+}
+
+.WaitingError {
+	font-family: 'Fira Mono Medium';
+	text-align: center;
+	padding: 0 1vw;
+	margin: 10vh 0;
+}
