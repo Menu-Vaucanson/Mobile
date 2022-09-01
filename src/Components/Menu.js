@@ -96,6 +96,16 @@ function Menu({ theme }) {
 
 		const cache = JSON.parse(sessionStorage.getItem('menuCache'));
 		if (cache) {
+			if (cache.length) {
+				setMenu(
+					<div className="Menu">
+						<div className="MenuTitle">
+							Aucun menu à afficher
+						</div>
+					</div>
+				);
+				return;
+			}
 			setMenu(<MenuSwiper menus={cache} isEvening={isEvening} css={css} theme={theme} />);
 			return;
 		}
@@ -108,11 +118,14 @@ function Menu({ theme }) {
 				}
 			})
 			if (!datas.length) {
-				datas.push({
-					"error": 1,
-					"errorMessage": "Aucun menu à afficher",
-					"errorEvening": 1
-				});
+				setMenu(
+					<div className="MenuWaiting" style={css}>
+						<div className="WaitingError">
+							Aucun menu à afficher
+						</div>
+					</div>
+				);
+				return;
 			}
 			sessionStorage.setItem('menuCache', JSON.stringify(datas));
 			setMenu(<MenuSwiper menus={datas} isEvening={isEvening} css={css} theme={theme} />);
