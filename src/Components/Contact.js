@@ -18,7 +18,7 @@ function Contact({ theme }) {
 	}
 	const dish3 = {
 		name: 'Rencontre',
-		content: 'Vous pouvez nous trouver en terminal X au lycée Vaucanson',
+		content: 'Vous pouvez nous trouver en TSTI2D2 au lycée Vaucanson',
 		style: 'green',
 		styleDark: 'greenDark'
 	}
