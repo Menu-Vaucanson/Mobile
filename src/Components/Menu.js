@@ -20,33 +20,33 @@ function getMenusDate() {
 	const date4 = new Date(date3.getFullYear(), date3.getMonth(), date3.getDate() + 1);
 	switch (date.getDay()) {
 		case 1:
-			menus.push(getMenu(date.getMonth(), date.getDate()));
-			menus.push(getMenu(date1.getMonth(), date1.getDate()));
-			menus.push(getMenu(date2.getMonth(), date2.getDate()));
-			menus.push(getMenu(date3.getMonth(), date3.getDate()));
-			menus.push(getMenu(date4.getMonth(), date4.getDate()));
+			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate()));
+			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate()));
+			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate()));
+			menus.push(getMenu(date3.getFullYear(), date3.getMonth(), date3.getDate()));
+			menus.push(getMenu(date4.getFullYear(), date4.getMonth(), date4.getDate()));
 			break;
 
 		case 2:
-			menus.push(getMenu(date.getMonth(), date.getDate()));
-			menus.push(getMenu(date1.getMonth(), date1.getDate()));
-			menus.push(getMenu(date2.getMonth(), date2.getDate()));
-			menus.push(getMenu(date3.getMonth(), date3.getDate()));
+			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate()));
+			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate()));
+			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate()));
+			menus.push(getMenu(date3.getFullYear(), date3.getMonth(), date3.getDate()));
 			break;
 
 		case 3:
-			menus.push(getMenu(date.getMonth(), date.getDate()));
-			menus.push(getMenu(date1.getMonth(), date1.getDate()));
-			menus.push(getMenu(date2.getMonth(), date2.getDate()));
+			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate()));
+			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate()));
+			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate()));
 			break;
 
 		case 4:
-			menus.push(getMenu(date.getMonth(), date.getDate()));
-			menus.push(getMenu(date1.getMonth(), date1.getDate()));
+			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate()));
+			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate()));
 			break;
 
 		case 5:
-			menus.push(getMenu(date.getMonth(), date.getDate()));
+			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate()));
 			break;
 
 		case 6:
@@ -60,7 +60,7 @@ function getMenusDate() {
 	return menus;
 }
 
-function getMenu(month, day) {
+function getMenu(year, month, day) {
 	return new Promise(resolve => {
 		axios.get(`${url}/menus/${month + 1}/${day}`).catch(err => {
 			console.log(err);
@@ -70,6 +70,7 @@ function getMenu(month, day) {
 				resolve(null);
 			} else {
 				const data = response.data.data;
+				data.year = year;
 				data.month = month;
 				data.day = day;
 				resolve(data);
