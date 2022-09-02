@@ -180,32 +180,38 @@ function Rate({ month, day, evening }) {
 		}
 	}, [day, month, evening]);
 	const menuDate = new Date(new Date().getFullYear(), month, day, 11, 45);
-	const actualDate = new Date();
-	console.log(menuDate);
-	console.log(actualDate);
-	console.log(menuDate >= actualDate);
-	if (menuDate >= actualDate) {
+	const EveningDate = new Date(new Date().getFullYear(), month, day, 19)
+	const currentDate = new Date();
+	if (evening && EveningDate >= currentDate) {
 		return (
 			<div className='MenuRate'>
 				<div className='Sent'>
-					Les votes sont ouverts à 11h45
+					Les votes sont ouverts à 19h00.
 				</div>
 			</div>
 		);
-	} else {
+	}
+	if (menuDate >= currentDate) {
 		return (
 			<div className='MenuRate'>
-				<div className='Stars' style={StarsCss}>
-					<Star onClick={setStar} number={1} state={star1} />
-					<Star onClick={setStar} number={2} state={star2} />
-					<Star onClick={setStar} number={3} state={star3} />
-					<Star onClick={setStar} number={4} state={star4} />
-					<Star onClick={setStar} number={5} state={star5} />
+				<div className='Sent'>
+					Les votes sont ouverts à 11h45.
 				</div>
-				{sendButton}
-			</div >
-		)
+			</div>
+		);
 	}
+	return (
+		<div className='MenuRate'>
+			<div className='Stars' style={StarsCss}>
+				<Star onClick={setStar} number={1} state={star1} />
+				<Star onClick={setStar} number={2} state={star2} />
+				<Star onClick={setStar} number={3} state={star3} />
+				<Star onClick={setStar} number={4} state={star4} />
+				<Star onClick={setStar} number={5} state={star5} />
+			</div>
+			{sendButton}
+		</div >
+	);
 }
 
 export default Rate;
