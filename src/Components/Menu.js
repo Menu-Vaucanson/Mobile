@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -50,11 +51,19 @@ function getMenusDate() {
 			break;
 
 		case 6:
-			menus.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
+			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate() + 2));
+			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate() + 2));
+			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate() + 2));
+			menus.push(getMenu(date3.getFullYear(), date3.getMonth(), date3.getDate() + 2));
+			menus.push(getMenu(date4.getFullYear(), date4.getMonth(), date4.getDate() + 2));
 			break;
 
 		default:
-			menus.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
+			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate() + 1));
+			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate() + 1));
+			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate() + 1));
+			menus.push(getMenu(date3.getFullYear(), date3.getMonth(), date3.getDate() + 1));
+			menus.push(getMenu(date4.getFullYear(), date4.getMonth(), date4.getDate() + 1));
 			break;
 	}
 	return menus;
@@ -98,14 +107,18 @@ function Menu({ theme }) {
 		const cache = JSON.parse(sessionStorage.getItem('menuCache'));
 		if (cache) {
 			if (!cache.length) {
-				setMenu(
-					<div className="MenuWaiting" style={css}>
-						<div className="WaitingError">
-							Aucun menu à afficher
+				if (new Date().getDay() == 6 || new Date().getDay() == 0) {
+					cache.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
+				} else {
+					setMenu(
+						<div className="MenuWaiting" style={css}>
+							<div className="WaitingError">
+								Aucun menu à afficher
+							</div>
 						</div>
-					</div>
-				);
-				return;
+					);
+					return;
+				}
 			}
 			setMenu(<MenuSwiper menus={cache} isEvening={isEvening} css={css} theme={theme} />);
 			return;
@@ -120,14 +133,18 @@ function Menu({ theme }) {
 			})
 			sessionStorage.setItem('menuCache', JSON.stringify(datas));
 			if (!datas.length) {
-				setMenu(
-					<div className="MenuWaiting" style={css}>
-						<div className="WaitingError">
-							Aucun menu à afficher
+				if (new Date().getDay() == 6 || new Date().getDay() == 0) {
+					datas.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
+				} else {
+					setMenu(
+						<div className="MenuWaiting" style={css}>
+							<div className="WaitingError">
+								Aucun menu à afficher
+							</div>
 						</div>
-					</div>
-				);
-				return;
+					);
+					return;
+				}
 			}
 			setMenu(<MenuSwiper menus={datas} isEvening={isEvening} css={css} theme={theme} />);
 		})
