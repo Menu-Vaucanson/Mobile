@@ -188,7 +188,7 @@ function Rate({ month, day, evening }) {
 		return (
 			<div className='MenuRate'>
 				<div className='Sent'>
-					le vote est ouvert a 11h45
+					Les votes sont ouverts à 11h45
 				</div>
 			</div>
 		);

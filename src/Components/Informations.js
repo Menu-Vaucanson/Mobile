@@ -23,7 +23,7 @@ function Informations({ theme }) {
 		styleDark: 'blueDark'
 	}
 	const dish4 = {
-		name: 'Fiabilitée',
+		name: 'Fiabilité',
 		content: 'Le menu affiché n’est qu’une copie de ceux publiés par l\'établissement, aucune information n’est donc garantie.',
 		style: 'blue',
 		styleDark: 'blueDark'
