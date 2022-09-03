@@ -4,13 +4,16 @@ import { Swiper } from "swiper/react";
 import { EffectCards } from "swiper";
 
 import Dish from './Dish';
+import Rate from './Rate';
 
 function setMenu(d) {
 	const today = new Date();
 	const tomorrow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
-	const date = d.substring(0, 2);
+	const date = d?.substring(0, 2);
 
-	if (today.getDate() == date) {
+	if (typeof date == 'undefined') {
+		return 'Menu';
+	} else if (today.getDate() == date) {
 		return 'Menu du jour';
 	} else if (tomorrow.getDate() == date) {
 		return 'Menu de demain';
@@ -22,9 +25,11 @@ function setMenu(d) {
 function setMenuEvening(d) {
 	const today = new Date();
 	const tomorrow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
-	const date = d.substring(0, 2);
+	const date = d?.substring(0, 2);
 
-	if (today.getDate() == date) {
+	if (typeof date == 'undefined') {
+		return 'Menu';
+	} else if (today.getDate() == date) {
 		return 'Menu de ce soir';
 	} else if (tomorrow.getDate() == date) {
 		return 'Menu de demain soir';
@@ -38,7 +43,7 @@ function MenuSwiper({ menus, isEvening, css, theme }) {
 
 	menus.forEach((menu, i) => {
 		const title = setMenu(menu.date);
-		if (menu.error === 1) {
+		if (menu.error) {
 			rMenus.push(
 				<SwiperSlide key={i} style={css}>
 					<div className="Menu">
@@ -66,25 +71,28 @@ function MenuSwiper({ menus, isEvening, css, theme }) {
 							})
 							}
 						</div>
+						<Rate month={menu.month} day={menu.day} evening={false} />
 					</div>
 				</SwiperSlide>
 			)
 		}
 		if (isEvening) {
 			const titleEvening = setMenuEvening(menu.date);
-			if (menu.errorEvening === 1) {
-				rMenus.push(
-					<SwiperSlide key={i + 0.1} style={css}>
-						<div className="Menu">
-							<div className="MenuTitle">
-								{titleEvening}
+			if (menu.errorEvening) {
+				if (typeof menu.errorEveningMessage != 'undefined') {
+					rMenus.push(
+						<SwiperSlide key={i + 0.1} style={css}>
+							<div className="Menu">
+								<div className="MenuTitle">
+									{titleEvening}
+								</div>
+								<div className="MenuError">
+									{menu.errorEveningMessage}
+								</div>
 							</div>
-							<div className="MenuError">
-								{menu.errorEveningMessage}
-							</div>
-						</div>
-					</SwiperSlide>
-				)
+						</SwiperSlide>
+					)
+				}
 			} else {
 				rMenus.push(
 					<SwiperSlide key={i + 0.1} style={css}>
@@ -100,6 +108,7 @@ function MenuSwiper({ menus, isEvening, css, theme }) {
 								})
 								}
 							</div>
+							<Rate month={menu.month} day={menu.day} evening={true} />
 						</div>
 					</SwiperSlide>
 				)

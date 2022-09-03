@@ -69,7 +69,7 @@ body {
 	transition: 200ms;
 	flex-direction: column;
 	align-items: center;
-	box-shadow: 2vw 0 5vmax rgba(0, 0, 0, 0.5);
+	box-shadow: 2vw 2vh 5vmax rgba(0, 0, 0, 0.5);
 }
 
 .SideMenu div {
@@ -116,6 +116,38 @@ body {
 	font-family: 'Fira Mono Medium';
 	text-align: center;
 	padding: 1vmax;
+}
+
+.MenuRate {
+	margin-bottom: 2vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.Stars {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.Star {
+	width: 10vw;
+	height: 10vw;
+	padding: 2vw;
+}
+
+.SendButton {
+	background-color: #D9D9D9;
+	padding: 5vw 5vh;
+	border-radius: 2vmax;
+	font-size: 2.5vmax;
+	font-family: 'Fira Mono Medium';
+}
+
+.Sent {
+	font-family: 'Fira Mono Medium';
 }
 
 .Dish {
@@ -213,4 +245,23 @@ a {
 	flex-direction: column;
 	align-items: center;
 	padding: 1vmax;
+}
+
+.MenuWaiting {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80vw;
+	height: max-content;
+	border-radius: 2vmax;
+	background-color: #B3B3B3;
+	align-self: flex-start;
+	margin-top: 5vh;
+}
+
+.WaitingError {
+	font-family: 'Fira Mono Medium';
+	text-align: center;
+	padding: 0 1vw;
+	margin: 10vh 0;
 }
