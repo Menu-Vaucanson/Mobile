@@ -236,16 +236,6 @@ a {
 	color: white;
 }
 
-.motivation-title {
-	font-size: 3vmax;
-}
-
-.motivation {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 1vmax;
-}
 
 .MenuWaiting {
 	display: flex;
@@ -264,4 +254,32 @@ a {
 	text-align: center;
 	padding: 0 1vw;
 	margin: 10vh 0;
+}
+
+.motivation-title {
+	font-size: 3vmax;
+}
+
+.motivation {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1vmax;
+}
+
+.contributors-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1vmax;
+	background-color: #403F4C;
+	color: white;
+}
+
+.contributors-title {
+	font-size: 3vmax;
+}
+
+.contributor-name {
+	text-align: center;
 }
