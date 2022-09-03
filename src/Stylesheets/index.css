@@ -274,12 +274,18 @@ a {
 	padding: 1vmax;
 	background-color: #403F4C;
 	color: white;
+	text-align: center;
 }
 
 .contributors-title {
 	font-size: 3vmax;
 }
 
-.contributor-name {
-	text-align: center;
+.contributor-description {
+	margin-bottom: 1vmax;
+}
+
+.icon {
+	width: 80vw;
+	height: auto;
 }

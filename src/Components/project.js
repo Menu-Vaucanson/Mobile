@@ -2,7 +2,6 @@ import ProjectLight from '../Themes/Project/Light';
 import ProjectDark from '../Themes/Project/Dark';
 import unel from '../Assets/unel.png'
 import wiwok from '../Assets/wiwok.png'
-
 function motivation() {
     return (
         <div className='motivation'>
