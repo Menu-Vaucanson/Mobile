@@ -203,3 +203,14 @@ a {
 	justify-content: center;
 	color: white;
 }
+
+.motivation-title {
+	font-size: 3vmax;
+}
+
+.motivation {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1vmax;
+}
