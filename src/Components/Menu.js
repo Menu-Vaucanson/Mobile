@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -20,68 +21,105 @@ function getMenusDate() {
 	const date4 = new Date(date3.getFullYear(), date3.getMonth(), date3.getDate() + 1);
 	switch (date.getDay()) {
 		case 1:
-			menus.push(getMenu(date.getMonth(), date.getDate()));
-			menus.push(getMenu(date1.getMonth(), date1.getDate()));
-			menus.push(getMenu(date2.getMonth(), date2.getDate()));
-			menus.push(getMenu(date3.getMonth(), date3.getDate()));
-			menus.push(getMenu(date4.getMonth(), date4.getDate()));
+			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate()));
+			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate()));
+			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate()));
+			menus.push(getMenu(date3.getFullYear(), date3.getMonth(), date3.getDate()));
+			menus.push(getMenu(date4.getFullYear(), date4.getMonth(), date4.getDate()));
 			break;
 
 		case 2:
-			menus.push(getMenu(date.getMonth(), date.getDate()));
-			menus.push(getMenu(date1.getMonth(), date1.getDate()));
-			menus.push(getMenu(date2.getMonth(), date2.getDate()));
-			menus.push(getMenu(date3.getMonth(), date3.getDate()));
+			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate()));
+			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate()));
+			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate()));
+			menus.push(getMenu(date3.getFullYear(), date3.getMonth(), date3.getDate()));
 			break;
 
 		case 3:
-			menus.push(getMenu(date.getMonth(), date.getDate()));
-			menus.push(getMenu(date1.getMonth(), date1.getDate()));
-			menus.push(getMenu(date2.getMonth(), date2.getDate()));
+			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate()));
+			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate()));
+			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate()));
 			break;
 
 		case 4:
-			menus.push(getMenu(date.getMonth(), date.getDate()));
-			menus.push(getMenu(date1.getMonth(), date1.getDate()));
+			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate()));
+			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate()));
 			break;
 
 		case 5:
-			menus.push(getMenu(date.getMonth(), date.getDate()));
+			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate()));
 			break;
 
 		case 6:
-			menus.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, errorEveningMessage: 'Bon week-end !', date: new Date().getDate().toString() });
+			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate() + 2));
+			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate() + 2));
+			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate() + 2));
+			menus.push(getMenu(date3.getFullYear(), date3.getMonth(), date3.getDate() + 2));
+			menus.push(getMenu(date4.getFullYear(), date4.getMonth(), date4.getDate() + 2));
 			break;
 
 		default:
-			menus.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, errorEveningMessage: 'Bon week-end !', date: new Date().getDate().toString() });
+			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate() + 1));
+			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate() + 1));
+			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate() + 1));
+			menus.push(getMenu(date3.getFullYear(), date3.getMonth(), date3.getDate() + 1));
+			menus.push(getMenu(date4.getFullYear(), date4.getMonth(), date4.getDate() + 1));
 			break;
 	}
 	return menus;
 }
 
-function getMenu(month, day) {
+function getMenu(year, month, day) {
 	return new Promise(resolve => {
 		axios.get(`${url}/menus/${month + 1}/${day}`).catch(err => {
+			console.log(err);
 			resolve(null);
 		}).then(response => {
-			resolve(response.data.data);
+			if (typeof response == 'undefined') {
+				resolve(null);
+			} else {
+				const data = response.data.data;
+				data.year = year;
+				data.month = month;
+				data.day = day;
+				resolve(data);
+			}
 		});
 	});
 }
 
 function Menu({ theme }) {
-	const [menu, setMenu] = useState('');
+	let css = MenuLight;
+	if (theme === 'dark') {
+		css = MenuDark;
+	}
+	const [menu, setMenu] = useState(
+		<div className="MenuWaiting" style={css}>
+			<div className="WaitingError">
+				Récupération des menus en cours...
+			</div>
+		</div>
+	);
 
 	useEffect(() => {
 		const isEvening = JSON.parse(window.localStorage.getItem('evening'));
 
-		let css = MenuLight;
-		if (theme === 'dark') {
-			css = MenuDark;
-		}
 		const cache = JSON.parse(sessionStorage.getItem('menuCache'));
 		if (cache) {
+			if (!cache.length) {
+				if (new Date().getDay() == 6 || new Date().getDay() == 0) {
+					cache.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
+				} else {
+					setMenu(
+						<div className="MenuWaiting" style={css}>
+							<div className="WaitingError">
+								Aucun menu à afficher
+							</div>
+						</div>
+					);
+					return;
+				}
+			}
 			setMenu(<MenuSwiper menus={cache} isEvening={isEvening} css={css} theme={theme} />);
 			return;
 		}
@@ -94,10 +132,23 @@ function Menu({ theme }) {
 				}
 			})
 			sessionStorage.setItem('menuCache', JSON.stringify(datas));
+			if (!datas.length) {
+				if (new Date().getDay() == 6 || new Date().getDay() == 0) {
+					datas.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
+				} else {
+					setMenu(
+						<div className="MenuWaiting" style={css}>
+							<div className="WaitingError">
+								Aucun menu à afficher
+							</div>
+						</div>
+					);
+					return;
+				}
+			}
 			setMenu(<MenuSwiper menus={datas} isEvening={isEvening} css={css} theme={theme} />);
 		})
-	}, [theme])
-
+	}, [theme, css])
 	return (menu);
 }
 
