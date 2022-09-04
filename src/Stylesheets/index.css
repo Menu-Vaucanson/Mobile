@@ -236,6 +236,7 @@ a {
 	color: white;
 }
 
+
 .MenuWaiting {
 	display: flex;
 	align-items: center;
@@ -253,4 +254,115 @@ a {
 	text-align: center;
 	padding: 0 1vw;
 	margin: 10vh 0;
+}
+
+.MotivationTitle {
+	font-size: 4vmax;
+	font-weight: bold;
+}
+
+.Motivation {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1vmax;
+	background-color: #403F4C;
+	color: black;
+	background-color: #D9D9D9;
+}
+
+.ContributorsBox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: #403F4C;
+	color: #F5FEF5;
+	text-align: center;
+}
+
+.ContributorBox {
+	width: 80vw;
+	margin: 2.5vh;
+}
+
+.ContributorsTitle {
+	font-size: 4vmax;
+	font-weight: bold;
+	margin-top: 3vh;
+}
+
+.ContributorDescription {
+	font-size: 2.5vmax;
+}
+
+.ContributorIcon {
+	width: 40vw;
+	height: 40vw;
+}
+
+.MotivationText {
+	padding: 2vh 2vw;
+	font-size: 2vmax;
+}
+
+.Timeline {
+	position: relative;
+	padding-left: 15vw;
+	margin: 5vh 0 0 10vw;
+	color: #F5FEF5;
+	width: 70vw;
+}
+
+.Timeline:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: -5vh;
+	width: 4px;
+	height: 200vh;
+	background-color: #403F4C;
+}
+
+.TimelineElement {
+	position: relative;
+	margin-bottom: 5vh;
+}
+
+.TimelineIcon {
+	position: absolute;
+	left: -20.5vw;
+	top: 1vh;
+	width: 12vw;
+	height: 12vw;
+	border-radius: 50%;
+	background: #403F4C;
+}
+
+.TimelineBody {
+	background: #403F4C;
+	border-radius: 1vmax;
+	padding: 3vh 4vw;
+}
+
+.TimelineBody:before {
+	content: '';
+	background: inherit;
+	width: 5vw;
+	height: 5vw;
+	position: absolute;
+	left: -2vw;
+	transform: rotate(45deg);
+	border-radius: 0.5vmax;
+}
+
+.TimelineDate {
+	font-style: italic;
+	opacity: 0.5;
+	margin-top: 3vh;
+	font-size: 1.5vmax;
+}
+
+.ProjectBox {
+	background-color: #D9D9D9;
 }

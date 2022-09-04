@@ -7,6 +7,7 @@ import E404 from './404';
 import Contact from './Contact';
 import Informations from './Informations';
 import Settings from './Settings';
+import Project from './project.js'
 
 import App from '../Themes/App';
 import AppDark from '../Themes/AppDark';
@@ -31,10 +32,11 @@ function Main() {
 					<Route path='/Contact' element={<Contact theme={theme} />}></Route>
 					<Route path='/Informations' element={<Informations theme={theme} />}></Route>
 					<Route path='/Settings' element={<Settings theme={theme} settheme={settheme} />}></Route>
+					<Route path='/Project' element={<Project />}></Route>
 					<Route path='/*' element={<E404 theme={theme} />}></Route>
 				</Routes>
 			</div>
-		</div>
+		</div >
 	)
 }
 
