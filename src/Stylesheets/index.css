@@ -256,57 +256,36 @@ a {
 	margin: 10vh 0;
 }
 
-.Motivation-title {
-	font-size: 4vmax;
-	font-weight: bold;
+.motivation-title {
+	font-size: 3vmax;
 }
 
-.Motivation {
+.motivation {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding: 1vmax;
-	color: black;
-	background-color: #D9D9D9;
-
 }
 
-.ContributorsBox {
-	color: #F5FEF5;
+.contributors-box {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-evenly;
+	padding: 1vmax;
 	background-color: #403F4C;
+	color: white;
 	text-align: center;
 }
 
-.ContributorBox {
-	width: 80vw;
-	margin: 2.5vh;
-}
-
-.ContributorTitle {
-	font-size: 4vmax;
-	font-weight: bold;
-	margin-top: 3vh;
-}
-
-.ContributorName {
-	font-weight: bold;
+.contributors-title {
 	font-size: 3vmax;
 }
 
-.ContributorDescription {
-	font-size: 2.5vmax;
+.contributor-description {
+	margin-bottom: 1vmax;
 }
 
-.ContributorIcon {
-	width: 40vw;
-	height: 40vw;
-}
-
-.MotivationText {
-	padding: 2vh 2vw;
-	font-size: 2vmax;
+.icon {
+	width: 80vw;
+	height: auto;
 }
