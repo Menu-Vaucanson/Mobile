@@ -18,13 +18,9 @@ function motivation({ theme }) {
     )
 }
 
-function Contributors({ theme }) {
-    let css = contributorLight;
-    if (theme === 'dark') {
-        css = contributorDark;
-    }
+function Contributors() {
     return (
-        <div className='contributors-box' style={css}>
+        <div className='contributors-box'>
             <div className='contributors-title'>contributeurs</div>
             <div className='contributorBox'>
                 <img src={unel} className="icon" alt={'icon unel'} />
@@ -43,8 +39,8 @@ function Contributors({ theme }) {
 function Project({ theme }) {
     return (
         <div className='project-box'>
-            {motivation({ theme })}
-            {Contributors({ theme })}
+            {motivation()}
+            {Contributors()}
         </div>
     )
 }
