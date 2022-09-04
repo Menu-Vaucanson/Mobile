@@ -256,7 +256,7 @@ a {
 	margin: 10vh 0;
 }
 
-.MotivationTitle {
+.Motivation-title {
 	font-size: 4vmax;
 	font-weight: bold;
 }
@@ -268,6 +268,7 @@ a {
 	padding: 1vmax;
 	color: black;
 	background-color: #D9D9D9;
+
 }
 
 .ContributorsBox {

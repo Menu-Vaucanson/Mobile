@@ -7,7 +7,7 @@ import E404 from './404';
 import Contact from './Contact';
 import Informations from './Informations';
 import Settings from './Settings';
-import Project from './Project'
+import Project from './project.js'
 
 import App from '../Themes/App';
 import AppDark from '../Themes/AppDark';
