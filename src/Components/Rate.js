@@ -179,6 +179,13 @@ function Rate({ month, day, evening }) {
 			}
 		}
 	}, [day, month, evening]);
+	const date = new Date();
+	if (month !== date.getMonth() || day !== date.getDate()) {
+		return (
+			<div className='MenuRate'></div>
+		);
+	}
+
 	const menuDate = new Date(new Date().getFullYear(), month, day, 11, 45);
 	const EveningDate = new Date(new Date().getFullYear(), month, day, 19)
 	const currentDate = new Date();
