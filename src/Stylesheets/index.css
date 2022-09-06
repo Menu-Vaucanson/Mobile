@@ -33,7 +33,7 @@ body {
 	font-family: "Fira Mono Medium";
 	width: max-content;
 	height: fit-content;
-	margin-left: 4vw;
+	margin-left: auto;
 }
 
 .MenuButton {
@@ -376,4 +376,11 @@ a {
 
 .red {
 	background-color: rgb(255, 94, 94);
+}
+
+.MenuLogo {
+	width: 5.39vmax;
+	height: 4.5vmax;
+	margin-left: auto;
+	margin-right: 0.75vmax;
 }
