@@ -29,6 +29,8 @@ body {
 }
 
 .MenuBarTitle {
+	font-size: 3.25vmax;
+	font-family: "Fira Mono Medium";
 	width: max-content;
 	height: fit-content;
 	margin-left: 4vw;
@@ -39,14 +41,15 @@ body {
 	flex-direction: column;
 	width: 4.5vmax;
 	height: 4.5vmax;
+	padding: 0.75vmax;
 	align-items: flex-start;
 	justify-content: space-evenly;
 }
 
 .MenuButton div {
 	background-color: #3366FE;
-	box-shadow: -4px 4px 4px rgba(0, 75, 204, 0.50);
-	height: 0.6vmax;
+	box-shadow: -4px 4px 8px rgba(0, 75, 204, 0.5);
+	height: 0.7vmax;
 	width: 1.5vmax;
 }
 
@@ -61,10 +64,10 @@ body {
 .SideMenu {
 	z-index: 5;
 	position: absolute;
-	top: 5.9vh;
+	top: 7.4vh;
 	left: -110vw;
 	width: 100vw;
-	height: 94.1vh;
+	height: 92.6vh;
 	display: flex;
 	transition: 200ms;
 	flex-direction: column;
@@ -90,7 +93,7 @@ body {
 
 .App {
 	width: 100vw;
-	min-height: calc(98.6vh - 4.5vmax);
+	min-height: calc(98.6vh - 6vmax);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -113,9 +116,10 @@ body {
 }
 
 .MenuTitle {
-	font-family: 'Fira Mono Medium';
+	font-family: 'Fira Mono Bold';
 	text-align: center;
-	padding: 1vmax;
+	padding: 2vmax 0;
+	font-size: 2.5vmax;
 }
 
 .MenuRate {
@@ -155,11 +159,11 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	border-radius: 2vmax;
+	border-radius: 1.5vmax;
 	padding: 1vmax;
 	margin-bottom: 2vmax;
-	border: 0.5vmax solid #B3B3B3;
-	background-color: #D9D9D9;
+	/*border: 0.5vmax solid #B3B3B3;*/
+	background-color: #F5FEF5;
 	white-space: pre-line;
 }
 
@@ -172,10 +176,12 @@ body {
 
 .DishTitle {
 	font-family: 'Fira Mono Medium';
+	color: black;
 }
 
 .DishContent {
 	text-align: center;
+	color: black;
 }
 
 .mySwiper {
@@ -192,8 +198,9 @@ body {
 	padding: 0 2vw;
 	width: max-content;
 	height: max-content;
-	border-radius: 2vmax;
+	border-radius: 1.5vmax;
 	background-color: #D9D9D9;
+	border: 3px #B3B3B3 solid;
 }
 
 a {
@@ -243,7 +250,7 @@ a {
 	justify-content: center;
 	width: 80vw;
 	height: max-content;
-	border-radius: 2vmax;
+	border-radius: 1.5vmax;
 	background-color: #B3B3B3;
 	align-self: flex-start;
 	margin-top: 5vh;
@@ -365,4 +372,8 @@ a {
 
 .ProjectBox {
 	background-color: #D9D9D9;
+}
+
+.red {
+	background-color: rgb(255, 94, 94);
 }

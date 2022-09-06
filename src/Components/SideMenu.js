@@ -29,10 +29,10 @@ function SideMenu({ active, theme, isActive }) {
 	return (
 		<div className="SideMenu" style={css}>
 			<Link to={'/'} className='SideMenuElement' onClick={Click}><div style={Css}>Menu</div></Link>
-			<Link to={'/Settings'} className='SideMenuElement' onClick={Click}><div style={Css}>Paramètres</div></Link>
-			<Link to={'/Informations'} className='SideMenuElement' onClick={Click}><div style={Css}>Informations</div></Link>
 			<Link to={'/Project'} className='SideMenuElement' onClick={Click}><div style={Css}>Projet</div></Link>
-			<Link to={'/Contact'} className='SideMenuElement' onClick={Click}><div style={Css}>Contact</div></Link>
+			<Link to={'/Informations'} className='SideMenuElement' onClick={Click}><div style={Css}>Informations</div></Link>
+			<Link to={'/Settings'} className='SideMenuElement' onClick={Click}><div style={Css}>Paramètres</div></Link>
+			{/*<Link to={'/Contact'} className='SideMenuElement' onClick={Click}><div style={Css}>Contact</div></Link>*/}
 		</div>
 	)
 }

@@ -42,6 +42,10 @@ function Settings({ theme, settheme }) {
 	}
 
 	function CleanClick() {
+		window.sessionStorage.clear();
+	}
+
+	function DeleteClick() {
 		settheme('light');
 		setButton1(false)
 		setButton2(false);
@@ -53,6 +57,7 @@ function Settings({ theme, settheme }) {
 			<div className='Setting' onClick={DarkClick}>Mode sombre<CustomCheck type={Button1} /></div>
 			<div className='Setting' onClick={EveningClick}>Mode interne <CustomCheck type={Button2} /></div>
 			<div className='Setting' onClick={CleanClick}>Effacer le cache</div>
+			<div className='Setting red' onClick={DeleteClick}>Effacer toute les données</div>
 		</div>
 	)
 }
