@@ -50,6 +50,7 @@ function Settings({ theme, settheme }) {
 		setButton1(false)
 		setButton2(false);
 		window.localStorage.clear();
+		window.sessionStorage.clear();
 	}
 
 	return (
