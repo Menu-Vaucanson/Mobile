@@ -5,9 +5,6 @@ import axios from 'axios';
 import "swiper/css";
 import "swiper/css/effect-cards";
 
-import MenuLight from '../Themes/Menu/Light';
-import MenuDark from '../Themes/Menu/Dark';
-
 import MenuSwiper from './MenuSwiper';
 
 const url = 'https://menuvox.fr:8080';
@@ -89,12 +86,8 @@ function getMenu(year, month, day) {
 }
 
 function Menu({ theme }) {
-	let css = MenuLight;
-	if (theme === 'dark') {
-		css = MenuDark;
-	}
 	const [menu, setMenu] = useState(
-		<div className="MenuWaiting" style={css}>
+		<div className="MenuWaiting">
 			<div className="WaitingError">
 				Récupération des menus en cours...
 			</div>
@@ -111,7 +104,7 @@ function Menu({ theme }) {
 					cache.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
 				} else {
 					setMenu(
-						<div className="MenuWaiting" style={css}>
+						<div className="MenuWaiting">
 							<div className="WaitingError">
 								Aucun menu à afficher
 							</div>
@@ -120,7 +113,7 @@ function Menu({ theme }) {
 					return;
 				}
 			}
-			setMenu(<MenuSwiper menus={cache} isEvening={isEvening} css={css} theme={theme} />);
+			setMenu(<MenuSwiper menus={cache} isEvening={isEvening} theme={theme} />);
 			return;
 		}
 
@@ -137,7 +130,7 @@ function Menu({ theme }) {
 					datas.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
 				} else {
 					setMenu(
-						<div className="MenuWaiting" style={css}>
+						<div className="MenuWaiting">
 							<div className="WaitingError">
 								Aucun menu à afficher
 							</div>
@@ -146,9 +139,9 @@ function Menu({ theme }) {
 					return;
 				}
 			}
-			setMenu(<MenuSwiper menus={datas} isEvening={isEvening} css={css} theme={theme} />);
+			setMenu(<MenuSwiper menus={datas} isEvening={isEvening} theme={theme} />);
 		})
-	}, [theme, css])
+	}, [theme])
 	return (menu);
 }
 
