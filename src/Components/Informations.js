@@ -22,13 +22,13 @@ function Informations({ theme }) {
 		name: 'La réalisation',
 		content: 'Le site est réalisé en HTML, CSS et Javascript avec react. Le code source est disponible sur GitHub.',
 		style: 'green',
-		styleDark: 'greenDark'
+		styleDark: 'blueDark'
 	}
 	const dish4 = {
 		name: 'Des questions ?',
 		content: 'Si vous avez une idée, une suggestion, un bug à rapporter, etc... vous pouvez nous contacter via la page de contact.',
 		style: 'yellow',
-		styleDark: 'yellowDark'
+		styleDark: 'redDark'
 	}
 	const dish5 = {
 		name: 'Fiabilité',
@@ -40,7 +40,7 @@ function Informations({ theme }) {
 		name: 'Publication',
 		content: 'Nous récuperons les menus manuellement. Ils seront donc disponibles entre vendredi soir et mardi.',
 		style: 'green',
-		styleDark: 'greenDark'
+		styleDark: 'redDark'
 	}
 
 	let css = InformationsLight;
