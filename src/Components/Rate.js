@@ -182,7 +182,7 @@ function Rate({ month, day, evening }) {
 	const date = new Date();
 	if (month !== date.getMonth() || day !== date.getDate()) {
 		return (
-			<div className='MenuRate'></div>
+			''
 		);
 	}
 
