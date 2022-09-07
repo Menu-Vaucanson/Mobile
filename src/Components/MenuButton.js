@@ -8,6 +8,7 @@ function MenuButton({ theme }) {
 		setisActive(old => !old);
 	}
 
+
 	return (
 		<div>
 			<SideMenu active={isActive} theme={theme} isActive={setisActive} />
