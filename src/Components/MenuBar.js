@@ -14,7 +14,7 @@ function MenuBar({ theme }) {
 	return (
 		<div className="MenuBar" style={css}>
 			<MenuButton theme={theme} />
-			<Link className='MenuBarTitle' to={'/'}>Menu Vaucanson</Link>
+			<Link className='MenuBarTitle' style={css} to='/'>Menu Vaucanson</Link>
 			<a className='MenuLogo' href='https://www.yout-ube.com/watch?v=dQw4w9WgXcQ'><img className='MenuLogo' src={Logo} alt='Logo' /></a>
 		</div>
 	)
