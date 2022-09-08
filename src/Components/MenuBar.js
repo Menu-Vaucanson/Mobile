@@ -1,8 +1,9 @@
 import MenuButton from '../Components/MenuButton';
 import Logo from '../Assets/Logo.png';
-
 import MenuBarLight from '../Themes/MenuBar/Light';
 import MenuBarDark from '../Themes/MenuBar/Dark';
+
+import { Link } from 'react-router-dom';
 
 function MenuBar({ theme }) {
 	let css = MenuBarLight;
@@ -13,7 +14,7 @@ function MenuBar({ theme }) {
 	return (
 		<div className="MenuBar" style={css}>
 			<MenuButton theme={theme} />
-			<div className='MenuBarTitle'>Menu Vaucanson</div>
+			<Link className='MenuBarTitle' to={'/'}>Menu Vaucanson</Link>
 			<a className='MenuLogo' href='https://www.yout-ube.com/watch?v=dQw4w9WgXcQ'><img className='MenuLogo' src={Logo} alt='Logo' /></a>
 		</div>
 	)
