@@ -14,13 +14,13 @@ function Informations({ theme }) {
 	}
 	const dish2 = {
 		name: 'Qui sommes-nous ?',
-		content: 'Nous sommmes des élèves de Terminale.',
+		content: 'Nous sommes des élèves de terminale.',
 		style: 'red',
 		styleDark: 'redDark'
 	}
 	const dish3 = {
 		name: 'La réalisation',
-		content: 'Le site est réalisé en HTML, CSS et Javascript avec react. Le code source est disponible sur GitHub.',
+		content: 'Le site est réalisé en HTML, CSS et Javascript avec React. Le code source est disponible sur GitHub.',
 		style: 'blue',
 		styleDark: 'blueDark'
 	}
@@ -38,7 +38,7 @@ function Informations({ theme }) {
 	}
 	const dish6 = {
 		name: 'Publication',
-		content: 'Nous récuperons les menus manuellement. Ils seront donc disponibles entre le vendredi soir et le mardi.',
+		content: 'Nous récupérons les menus manuellement. Ils seront donc disponibles entre le vendredi soir et le mardi.',
 		style: 'red',
 		styleDark: 'redDark'
 	}
