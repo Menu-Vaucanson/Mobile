@@ -14,7 +14,7 @@ function Informations({ theme }) {
 	}
 	const dish2 = {
 		name: 'Qui sommes-nous ?',
-		content: 'Nous sommmes des élèves de terminal.',
+		content: 'Nous sommmes des élèves de Terminale.',
 		style: 'red',
 		styleDark: 'redDark'
 	}
@@ -38,7 +38,7 @@ function Informations({ theme }) {
 	}
 	const dish6 = {
 		name: 'Publication',
-		content: 'Nous récuperons les menus manuellement. Ils seront donc disponibles entre vendredi soir et mardi.',
+		content: 'Nous récuperons les menus manuellement. Ils seront donc disponibles entre le vendredi soir et le mardi.',
 		style: 'red',
 		styleDark: 'redDark'
 	}
