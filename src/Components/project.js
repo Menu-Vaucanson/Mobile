@@ -104,7 +104,11 @@ function Timeline() {
 			title: "Le site et en test",
 			description: "Le site est terminé, il est en test et des petits fignolages sont en cours.",
 			date: "1 septembre 2022",
-		},
+		}, {
+			title: "Le repo mobile est open-source",
+			description: "Le code du projet passe en open-source, il est donc ouvert à tout le monde sur github!",
+			date: "10 septembre 2022",
+		}
 	]
 
 	timelineElements = timelineElements.map((t, i) => {
