@@ -1,6 +1,5 @@
 /* eslint-disable eqeqeq */
-import { SwiperSlide } from 'swiper/react';
-import { Swiper } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards } from "swiper";
 
 import Dish from './Dish';
@@ -68,8 +67,7 @@ function MenuSwiper({ menus, isEvening, css, theme }) {
 								return (
 									<Dish key={i} dish={dish} theme={theme} />
 								);
-							})
-							}
+							})}
 						</div>
 						<Rate month={menu.month} day={menu.day} evening={false} />
 					</div>
@@ -116,11 +114,7 @@ function MenuSwiper({ menus, isEvening, css, theme }) {
 		}
 	});
 	return (
-		<Swiper
-			effect={"cards"}
-			modules={[EffectCards]}
-			className="mySwiper"
-		>
+		<Swiper effect={"cards"} modules={[EffectCards]}>
 			{rMenus}
 		</Swiper>
 	);
