@@ -127,6 +127,11 @@ body {
 	font-size: 2.5vmax;
 }
 
+.RateText {
+	text-align: center;
+	font-family: 'Fira Mono Medium';
+}
+
 .MenuRate {
 	margin-bottom: 2vh;
 	display: flex;
@@ -152,10 +157,6 @@ body {
 	padding: 5vw 5vh;
 	border-radius: 2vmax;
 	font-size: 2.5vmax;
-	font-family: 'Fira Mono Medium';
-}
-
-.Sent {
 	font-family: 'Fira Mono Medium';
 }
 
@@ -337,7 +338,7 @@ a {
 	left: 0;
 	top: -5vh;
 	width: 4px;
-	height: 200vh;
+	height: 230vh;
 	background-color: #403F4C;
 }
 

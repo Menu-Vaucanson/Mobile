@@ -71,20 +71,20 @@ function Rate({ month, day, evening }) {
 		}
 		window.localStorage.setItem('rates', JSON.stringify(rates));
 		setStarsCss({ 'display': 'none' });
-		setSendButton(<div>
+		setSendButton(<div className='RateText'>
 			Envoi en cours...
 		</div>)
 		postRate(month, day, selected, evening);
-		setSendButton(<div>
+		setSendButton(<div className='RateText'>
 			Récupération en cours...
 		</div>)
 		getRate(month, day, evening).then(rate => {
 			if (rate != null && rate.rate != null) {
-				setSendButton(<div className=''>
+				setSendButton(<div className='RateText'>
 					La moyenne est de {rate.rate}
 				</div>);
 			} else {
-				setSendButton(<div className='Sent'>
+				setSendButton(<div className='RateText'>
 					Merci !
 				</div>)
 			}
@@ -159,7 +159,7 @@ function Rate({ month, day, evening }) {
 					setStarsCss({ 'display': 'none' });
 					getRate(month, day, evening).then(rate => {
 						if (rate != null && rate.rate != null) {
-							setSendButton(<div className='Sent'>
+							setSendButton(<div className='RateText'>
 								La moyenne est de {rate.rate}
 							</div>);
 						}
@@ -170,7 +170,7 @@ function Rate({ month, day, evening }) {
 					setStarsCss({ 'display': 'none' });
 					getRate(month, day, evening).then(rate => {
 						if (rate != null && rate.rate != null) {
-							setSendButton(<div className='Sent'>
+							setSendButton(<div className='RateText'>
 								La moyenne est de {rate.rate}
 							</div>);
 						}
@@ -191,19 +191,15 @@ function Rate({ month, day, evening }) {
 	const currentDate = new Date();
 	if (evening && EveningDate >= currentDate) {
 		return (
-			<div className='MenuRate'>
-				<div className='Sent'>
-					Les votes sont ouverts à 19h00.
-				</div>
+			<div className='RateText'>
+				Les votes sont ouverts à 19h00.
 			</div>
 		);
 	}
 	if (menuDate >= currentDate) {
 		return (
-			<div className='MenuRate'>
-				<div className='Sent'>
-					Les votes sont ouverts à 11h45.
-				</div>
+			<div className='RateText'>
+				Les votes sont ouverts à 11h45.
 			</div>
 		);
 	}
