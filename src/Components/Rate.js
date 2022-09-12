@@ -71,22 +71,23 @@ function Rate({ month, day, evening }) {
 		}
 		window.localStorage.setItem('rates', JSON.stringify(rates));
 		setStarsCss({ 'display': 'none' });
-		setSendButton(<div className='RateText'>
-			Envoi en cours...
-		</div>)
+		setSendButton(
+			<div className='MenuRate'><div className='RateText'>
+				Envoi en cours...
+			</div></div>);
 		postRate(month, day, selected, evening);
-		setSendButton(<div className='RateText'>
+		setSendButton(<div className='MenuRate'><div className='RateText'>
 			Récupération en cours...
-		</div>)
+		</div></div>)
 		getRate(month, day, evening).then(rate => {
 			if (rate != null && rate.rate != null) {
-				setSendButton(<div className='RateText'>
+				setSendButton(<div className='MenuRate'><div className='RateText'>
 					La moyenne est de {rate.rate}
-				</div>);
+				</div></div>);
 			} else {
-				setSendButton(<div className='RateText'>
+				setSendButton(<div className='MenuRate'><div className='RateText'>
 					Merci !
-				</div>)
+				</div></div>)
 			}
 		});
 	}
@@ -170,9 +171,10 @@ function Rate({ month, day, evening }) {
 					setStarsCss({ 'display': 'none' });
 					getRate(month, day, evening).then(rate => {
 						if (rate != null && rate.rate != null) {
-							setSendButton(<div className='RateText'>
-								La moyenne est de {rate.rate}
-							</div>);
+							setSendButton(
+								<div className='RateText'>
+									La moyenne est de {rate.rate}
+								</div>);
 						}
 					});
 				}
@@ -191,15 +193,19 @@ function Rate({ month, day, evening }) {
 	const currentDate = new Date();
 	if (evening && EveningDate >= currentDate) {
 		return (
-			<div className='RateText'>
-				Les votes sont ouverts à 19h00.
+			<div className='MenuRate'>
+				<div className='RateText'>
+					Les votes sont ouverts à 19h00.
+				</div>
 			</div>
 		);
 	}
 	if (menuDate >= currentDate) {
 		return (
-			<div className='RateText'>
-				Les votes sont ouverts à 11h45.
+			<div className='MenuRate'>
+				<div className='RateText'>
+					Les votes sont ouverts à 11h45.
+				</div>
 			</div>
 		);
 	}
