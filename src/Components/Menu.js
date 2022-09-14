@@ -93,7 +93,6 @@ function getMenus(menus) {
 }
 
 function Menu({ theme }) {
-	window.sessionStorage.clear();
 	const [menu, setMenu] = useState(
 		<div className="MenuWaiting">
 			<div className="WaitingError">
