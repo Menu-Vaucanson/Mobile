@@ -183,9 +183,7 @@ function Rate({ month, day, evening }) {
 	}, [day, month, evening]);
 	const date = new Date();
 	if (month !== date.getMonth() || day !== date.getDate()) {
-		return (
-			''
-		);
+		return ('');
 	}
 
 	const menuDate = new Date(new Date().getFullYear(), month, day, 11, 45);

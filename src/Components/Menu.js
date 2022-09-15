@@ -85,7 +85,14 @@ function getMenus(menus) {
 			if (typeof response == 'undefined') {
 				resolve(null);
 			} else {
-				const data = response.data.data;
+				let data = response.data.data;
+				data = data.map(d => {
+					const temp = d.data.date.split('/');
+					d.data.day = parseInt(temp[0]);
+					d.data.month = parseInt(temp[1] - 1);
+					d.data.year = parseInt(temp[2]);
+					return d;
+				});
 				resolve(data);
 			}
 		});
