@@ -87,7 +87,8 @@ function getMenus(menus) {
 			} else {
 				let data = response.data.data;
 				data = data.map(d => {
-					const temp = d.data.date.split('/');
+					const temp = d.data?.date?.split('/');
+					if (typeof temp == 'undefined') return d;
 					d.data.day = parseInt(temp[0]);
 					d.data.month = parseInt(temp[1] - 1);
 					d.data.year = parseInt(temp[2]);
