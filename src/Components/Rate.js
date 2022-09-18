@@ -30,7 +30,7 @@ function getRate(month, day, evening) {
 function postRate(month, day, rate, evening) {
 	if (evening) {
 		return new Promise(resolve => {
-			axios.post(`${url}/ratesEvening/${month + 1}/${day}`, { rate: rate }).catch(err => {
+			axios.post(`${url}/ratesEvening/${month + 1}/${day}`, { rate: rate, pc: false }).catch(err => {
 				resolve(null);
 			}).then(response => {
 				resolve(response?.data);
@@ -38,7 +38,7 @@ function postRate(month, day, rate, evening) {
 		});
 	} else {
 		return new Promise(resolve => {
-			axios.post(`${url}/rates/${month + 1}/${day}`, { rate: rate }).catch(err => {
+			axios.post(`${url}/rates/${month + 1}/${day}`, { rate: rate, pc: false }).catch(err => {
 				resolve(null);
 			}).then(response => {
 				resolve(response?.data);
