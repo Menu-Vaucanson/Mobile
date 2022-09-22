@@ -8,23 +8,27 @@ import Rate from './Rate';
 function setMenu(d) {
 	const today = new Date();
 	const tomorrow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
-	const date = d?.substring(0, 2);
 
-	if (typeof date == 'undefined') {
-		return 'Menu';
-	} else if (today.getDate() == date) {
-		return 'Menu du jour';
-	} else if (tomorrow.getDate() == date) {
-		return 'Menu de demain';
+	const date = new Date(today.getFullYear(), d?.substring(3, 5) - 1, d?.substring(0, 2));
+
+	const Days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+
+	if (today.getDate() == date.getDate()) {
+		return 'Menu du Jour';
+	} else if (tomorrow.getDate() == date.getDate()) {
+		return 'Menu de Demain';
 	} else {
-		return 'Menu du ' + d;
+		return 'Menu de ' + Days[date.getDay()];
 	}
 }
 
 function setMenuEvening(d) {
 	const today = new Date();
 	const tomorrow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
-	const date = d?.substring(0, 2);
+
+	const date = new Date(today.getFullYear(), d?.substring(3, 5) - 1, d?.substring(0, 2));
+
+	const Days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
 
 	if (typeof date == 'undefined') {
 		return 'Menu';
@@ -33,7 +37,7 @@ function setMenuEvening(d) {
 	} else if (tomorrow.getDate() == date) {
 		return 'Menu de demain soir';
 	} else {
-		return 'Menu du soir du ' + d;
+		return 'Menu du soir de ' + Days[date.getDay()];
 	}
 }
 
