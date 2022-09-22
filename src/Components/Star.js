@@ -1,5 +1,5 @@
-import BlackStar from '../Assets/Black Star.png';
-import YellowStar from '../Assets/Yellow Star.png';
+import BlackStar from '../Assets/Black Star.svg';
+import YellowStar from '../Assets/Yellow Star.svg';
 
 function Star({ state, number, onClick }) {
 	let color;
