@@ -35,7 +35,7 @@ function setMenuEvening(d) {
 	} else if (tomorrow.getDate() == date.getDate()) {
 		return 'Menu de demain soir';
 	} else {
-		return 'Menu du soir de ' + Days[date.getDay()];
+		return 'Menu de ' + Days[date.getDay()] + ' soir';
 	}
 }
 
