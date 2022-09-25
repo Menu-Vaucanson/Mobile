@@ -311,6 +311,11 @@ a {
 	margin-top: 3vh;
 }
 
+.ContributorName {
+	font-size: 3vmax;
+	font-weight: bold;
+}
+
 .ContributorDescription {
 	font-size: 2.5vmax;
 }
