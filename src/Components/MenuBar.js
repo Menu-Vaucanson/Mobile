@@ -1,5 +1,5 @@
 import MenuButton from '../Components/MenuButton';
-import Logo from '../Assets/Logo.png';
+import Logo from '../Assets/Logo.svg';
 import MenuBarLight from '../Themes/MenuBar/Light';
 import MenuBarDark from '../Themes/MenuBar/Dark';
 
