@@ -78,36 +78,36 @@ function Timeline() {
 		{
 			title: "Premier menu en ligne",
 			description: "Wiwok met en ligne le premier menu sur le site.",
-			date: "4 avril 2022"
+			date: "4 Avril 2022"
 		},
 		{
 			title: "Unel rejoint le projet",
 			description: "Unel rejoint le projet, il aide Wiwok dans le développement.",
-			date: "24 juillet 2022",
+			date: "24 Juillet 2022",
 		},
 		{
 			title: "Un nouveau site ?",
 			description: "Wiwok et Unel réfléchissent sérieusement à refaire l’interface complète du site.",
-			date: "24 juillet 2022",
+			date: "24 Juillet 2022",
 		},
 		{
 			title: "Un nouveau site !",
 			description: "Il est maintenant décidé que le site doit être refait de manière plus propre. Les premières maquettes sont créées.",
-			date: "24 juillet 2022",
+			date: "24 Juillet 2022",
 		},
 		{
 			title: "Corinan nous rejoint",
 			description: "On n'a jamais trop d’aide, Corinan vient en renfort sur les maquettes, les corrections, etc...",
-			date: "9 août 2022",
+			date: "9 Août 2022",
 		},
 		{
 			title: "Le site et en test",
 			description: "Le site est terminé, il est en test et des petits fignolages sont en cours.",
-			date: "1 septembre 2022",
+			date: "1 Septembre 2022",
 		}, {
 			title: "Le repo mobile est open-source",
-			description: "Le code du projet passe en open-source, il est donc ouvert à tout le monde sur github!",
-			date: "10 septembre 2022",
+			description: "Le code du projet passe en open-source, il est donc ouvert à tout le monde sur GitHub!",
+			date: "10 Septembre 2022",
 		}
 	]
 
