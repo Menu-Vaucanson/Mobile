@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import JSConfetti from 'js-confetti';
 
 import Star from './Star';
 
@@ -72,22 +73,54 @@ function Rate({ month, day, evening }) {
 		window.localStorage.setItem('rates', JSON.stringify(rates));
 		setStarsCss({ 'display': 'none' });
 		setSendButton(
-			<div className='MenuRate'><div className='RateText'>
-				Envoi en cours...
-			</div></div>);
+			<div className='MenuRate'>
+				<div className='RateText'>
+					Envoi en cours...
+				</div>
+			</div>
+		);
 		postRate(month, day, selected, evening);
-		setSendButton(<div className='MenuRate'><div className='RateText'>
-			Récupération en cours...
-		</div></div>)
+		setSendButton(
+			<div className='MenuRate'>
+				<div className='RateText'>
+					Récupération en cours...
+				</div>
+			</div>
+		);
 		getRate(month, day, evening).then(rate => {
-			if (rate != null && rate.rate != null) {
-				setSendButton(<div className='MenuRate'><div className='RateText'>
-					La moyenne est de {rate.rate}
-				</div></div>);
+			const jsConfetti = new JSConfetti();
+			if (selected === 1) {
+				jsConfetti.addConfetti({ emojis: ['💩'] });
+			} else if (selected === 2) {
+				jsConfetti.addConfetti({ emojis: ['🍴'] });
+			} else if (selected === 4) {
+				jsConfetti.addConfetti({ emojis: ['⭐'] });
+			} else if (selected === 5) {
+				jsConfetti.addConfetti({ emojis: ['🤩'] });
 			} else {
-				setSendButton(<div className='MenuRate'><div className='RateText'>
-					Merci !
-				</div></div>)
+				jsConfetti.addConfetti({
+					confettiColors: [
+						'#4775FF', '#E74855', '#08A47C', '#FFC482'
+					],
+					confettiNumber: 500,
+					confettiRadius: 10
+				});
+			}
+			if (rate != null && rate.rate != null) {
+				setSendButton(
+					<div className='MenuRate'>
+						<div className='RateText'>
+							La moyenne est de {rate.rate}
+						</div>
+					</div>);
+			} else {
+				setSendButton(
+					<div className='MenuRate'>
+						<div className='RateText'>
+							Merci !
+						</div>
+					</div>
+				);
 			}
 		});
 	}
