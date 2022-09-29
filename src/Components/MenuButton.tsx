@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-import SideMenu from '../Components/SideMenu';
+// @ts-ignore
+import SideMenu from '../Components/SideMenu.tsx';
 
 function MenuButton({ theme }) {
 	const [isActive, setisActive] = useState(false);

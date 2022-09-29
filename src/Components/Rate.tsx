@@ -1,19 +1,20 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import JSConfetti from 'js-confetti';
 
-import Star from './Star';
+// @ts-ignore
+import Star from './Star.tsx';
 
 let selected = 0;
 
 const url = 'https://menuvox.fr:8080'
 
-function getRate(month, day, evening) {
+function getRate(month: number, day: number, evening: number) {
 	if (evening) {
 		return new Promise(resolve => {
 			axios.get(`${url}/ratesEvening/${month + 1}/${day}`).catch(err => {
 				resolve(null);
-			}).then(response => {
+			}).then((response: any) => {
 				resolve(response.data);
 			});
 		});
@@ -21,7 +22,7 @@ function getRate(month, day, evening) {
 		return new Promise(resolve => {
 			axios.get(`${url}/rates/${month + 1}/${day}`).catch(err => {
 				resolve(null);
-			}).then(response => {
+			}).then((response: any) => {
 				resolve(response.data);
 			});
 		});
@@ -56,12 +57,12 @@ function Rate({ month, day, evening }) {
 	const [star4, setStar4] = useState(false);
 	const [star5, setStar5] = useState(false);
 
-	const [sendButton, setSendButton] = useState('');
+	const [sendButton, setSendButton] = useState(<></>);
 
 	const [StarsCss, setStarsCss] = useState({});
 
 	function sendRate() {
-		let rates = JSON.parse(window.localStorage.getItem('rates'));
+		let rates = JSON.parse(window.localStorage.getItem('rates') as string);
 		if (rates == null) {
 			rates = [];
 		}
@@ -87,7 +88,7 @@ function Rate({ month, day, evening }) {
 				</div>
 			</div>
 		);
-		getRate(month, day, evening).then(rate => {
+		getRate(month, day, evening).then((rate: any) => {
 			const jsConfetti = new JSConfetti();
 			if (selected === 1) {
 				jsConfetti.addConfetti({ emojis: ['💩'] });
@@ -133,7 +134,7 @@ function Rate({ month, day, evening }) {
 		)
 	}
 
-	function setStar(number) {
+	function setStar(number: number) {
 		if (number === selected) {
 			selected = 0;
 			setStar1(false);
@@ -141,7 +142,7 @@ function Rate({ month, day, evening }) {
 			setStar3(false);
 			setStar4(false);
 			setStar5(false);
-			setSendButton('');
+			setSendButton(<></>);
 		} else if (number === 1) {
 			selected = 1;
 			setStar1(true);
@@ -186,12 +187,12 @@ function Rate({ month, day, evening }) {
 	}
 
 	useEffect(() => {
-		const rates = JSON.parse(window.localStorage.getItem('rates'));
+		const rates = JSON.parse(window.localStorage.getItem('rates') as string);
 		if (rates != null) {
 			if (evening) {
 				if (rates.includes(`${month}/${day}e`)) {
 					setStarsCss({ 'display': 'none' });
-					getRate(month, day, evening).then(rate => {
+					getRate(month, day, evening).then((rate: any) => {
 						if (rate != null && rate.rate != null) {
 							setSendButton(<div className='RateText'>
 								La moyenne est de {rate.rate}
@@ -202,7 +203,7 @@ function Rate({ month, day, evening }) {
 			} else {
 				if (rates.includes(`${month}/${day}`)) {
 					setStarsCss({ 'display': 'none' });
-					getRate(month, day, evening).then(rate => {
+					getRate(month, day, evening).then((rate: any) => {
 						if (rate != null && rate.rate != null) {
 							setSendButton(
 								<div className='RateText'>
@@ -216,7 +217,7 @@ function Rate({ month, day, evening }) {
 	}, [day, month, evening]);
 	const date = new Date();
 	if (month !== date.getMonth() || day !== date.getDate()) {
-		return ('');
+		return (<></>);
 	}
 
 	const menuDate = new Date(new Date().getFullYear(), month, day, 11, 45);

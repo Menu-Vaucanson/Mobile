@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-import CustomCheck from "./CustomCheck";
+// @ts-ignore
+import CustomCheck from "./CustomCheck.tsx";
 
 
 function Settings({ theme, settheme }) {
@@ -9,7 +10,7 @@ function Settings({ theme, settheme }) {
 		actualTheme = true;
 	}
 
-	const actualEvening = JSON.parse(window.localStorage.getItem('evening'));
+	const actualEvening = JSON.parse(window.localStorage.getItem('evening') as string);
 
 
 	const [Button1, setButton1] = useState(actualTheme);
@@ -30,7 +31,7 @@ function Settings({ theme, settheme }) {
 	}
 
 	function EveningClick() {
-		setButton2(old => {
+		setButton2((old: any) => {
 			if (old) {
 				window.localStorage.setItem('evening', JSON.stringify(false));
 				return false;

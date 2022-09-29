@@ -1,8 +1,10 @@
+import React from 'react';
+
 import BlackStar from '../Assets/Black Star.svg';
 import YellowStar from '../Assets/Yellow Star.svg';
 
 function Star({ state, number, onClick }) {
-	let color;
+	let color: string;
 	if (state) {
 		color = YellowStar;
 	} else {

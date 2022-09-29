@@ -1,3 +1,5 @@
+import React from 'react'
+
 import Unel from '../Assets/Unel.png'
 import Wiwok from '../Assets/Wiwok.png'
 import Corinan from '../Assets/Corinan.png'
@@ -43,7 +45,7 @@ function Contributors() {
 		}
 	]
 
-	contributors = contributors.map((c, i) => {
+	const C = contributors.map((c, i) => {
 		return <Contributor name={c.name} desc={c.desc} img={c.img} key={i} />
 	});
 
@@ -51,7 +53,7 @@ function Contributors() {
 	return (
 		<div className='ContributorsBox'>
 			<div className='ContributorsTitle'>Contributeurs</div>
-			{contributors}
+			{C}
 		</div>
 	)
 }
@@ -111,13 +113,13 @@ function Timeline() {
 		}
 	]
 
-	timelineElements = timelineElements.map((t, i) => {
+	const T = timelineElements.map((t, i) => {
 		return <TimeLineComp text={t.description} date={t.date} key={i} />
 	})
 
 	return (
 		<div className="Timeline">
-			{timelineElements}
+			{T}
 		</div>
 	);
 }
