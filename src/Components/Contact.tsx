@@ -27,6 +27,12 @@ function Contact({ theme }) {
 		style: 'green',
 		styleDark: 'greenDark'
 	}
+	const dish4 = {
+		name: 'Github',
+		content: 'Cliquez ici pour accéder à l\'organisation Github du projet.',
+		style: 'green',
+		styleDark: 'greenDark'
+	}
 
 	let css = ContactLight;
 	if (theme === 'dark') {
@@ -38,6 +44,7 @@ function Contact({ theme }) {
 			<Dish key={1} dish={dish1} theme={theme} />
 			<Dish key={2} dish={dish2} theme={theme} />
 			<Dish key={3} dish={dish3} theme={theme} />
+			<a href="https://github.com/Menu-Vaucanson"><Dish key={4} dish={dish4} theme={theme} /></a>
 		</div>
 	)
 }
