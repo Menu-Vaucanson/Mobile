@@ -1,14 +1,9 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-// @ts-ignore
 import SideMenuLight from '../Themes/SideBar/Light.ts';
-// @ts-ignore
 import SideMenuDark from '../Themes/SideBar/Dark.ts';
 
-// @ts-ignore
 import SideMenuButtonLight from '../Themes/SideMenuButton/Light.ts';
-// @ts-ignore
 import SideMenuButtonDark from '../Themes/SideMenuButton/Dark.ts';
 
 function SideMenu({ active, theme, isActive }) {

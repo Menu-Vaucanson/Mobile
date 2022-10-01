@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import JSConfetti from 'js-confetti';
 
-// @ts-ignore
 import Star from './Star.tsx';
 
 let selected = 0;
@@ -29,7 +28,7 @@ function getRate(month: number, day: number, evening: number) {
 	}
 }
 
-function postRate(month, day, rate, evening) {
+function postRate(month: number, day: number, rate: number, evening: boolean) {
 	if (evening) {
 		return new Promise(resolve => {
 			axios.post(`${url}/ratesEvening/${month + 1}/${day}`, { rate: rate, pc: false }).catch(err => {

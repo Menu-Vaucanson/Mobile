@@ -1,12 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-// @ts-ignore
 import Dish from './Dish.tsx';
 
-// @ts-ignore
 import InformationsLight from '../Themes/Informations/Light.ts';
-// @ts-ignore
 import InformationsDark from '../Themes/Informations/Dark.ts';
 
 function Informations({ theme }) {

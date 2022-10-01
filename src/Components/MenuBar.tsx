@@ -1,12 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-// @ts-ignore
 import MenuButton from './MenuButton.tsx';
 import Logo from '../Assets/Logo.svg';
-// @ts-ignore
 import MenuBarLight from '../Themes/MenuBar/Light.ts';
-// @ts-ignore
 import MenuBarDark from '../Themes/MenuBar/Dark.ts';
 
 

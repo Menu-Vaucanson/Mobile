@@ -1,12 +1,10 @@
 /* eslint-disable eqeqeq */
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-// @ts-ignore
-import MenuSwiper from './MenuSwiper.tsx';
-
 import "swiper/css";
 import "swiper/css/effect-cards";
 
+import MenuSwiper from './MenuSwiper.tsx';
 
 const url = 'https://menuvox.fr:8080';
 

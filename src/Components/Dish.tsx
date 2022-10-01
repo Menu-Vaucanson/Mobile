@@ -1,21 +1,11 @@
-import React from 'react';
-
-// @ts-ignore
 import blue from '../Themes/Menus/blue.ts';
-// @ts-ignore
 import red from '../Themes/Menus/red.ts';
-// @ts-ignore
 import green from '../Themes/Menus/green.ts';
-// @ts-ignore
 import yellow from '../Themes/Menus/yellow.ts';
 
-// @ts-ignore
 import blueDark from '../Themes/Menus/blueDark.ts';
-// @ts-ignore
 import redDark from '../Themes/Menus/redDark.ts';
-// @ts-ignore
 import greenDark from '../Themes/Menus/greenDark.ts';
-// @ts-ignore
 import yellowDark from '../Themes/Menus/yellowDark.ts';
 
 function Dish({ dish, theme }) {

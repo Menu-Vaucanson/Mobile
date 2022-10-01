@@ -1,5 +1,3 @@
-import React from "react";
-
 function E404({ theme }) {
 	let css = {};
 	if (theme === 'dark') {

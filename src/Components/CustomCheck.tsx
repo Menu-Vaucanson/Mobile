@@ -1,5 +1,3 @@
-import React from "react";
-
 function CustomCheck({ type }) {
 	if (type) {
 		return (

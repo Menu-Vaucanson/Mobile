@@ -1,10 +1,5 @@
-import React from 'react'
-
-// @ts-ignore
 import Unel from '../Assets/Unel.png'
-// @ts-ignore
 import Wiwok from '../Assets/Wiwok.png'
-// @ts-ignore
 import Corinan from '../Assets/Corinan.png'
 
 function Motivation() {

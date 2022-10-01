@@ -1,5 +1,3 @@
-import React from 'react';
-
 import BlackStar from '../Assets/Black Star.svg';
 import YellowStar from '../Assets/Yellow Star.svg';
 

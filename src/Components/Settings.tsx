@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-// @ts-ignore
 import CustomCheck from "./CustomCheck.tsx";
-
 
 function Settings({ theme, settheme }) {
 	let actualTheme = false

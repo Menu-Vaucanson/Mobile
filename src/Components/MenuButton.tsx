@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-// @ts-ignore
 import SideMenu from '../Components/SideMenu.tsx';
 
 function MenuButton({ theme }) {

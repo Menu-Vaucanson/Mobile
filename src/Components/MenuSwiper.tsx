@@ -1,11 +1,8 @@
 /* eslint-disable eqeqeq */
-import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards } from "swiper";
 
-// @ts-ignore
 import Dish from './Dish.tsx';
-// @ts-ignore
 import Rate from './Rate.tsx';
 
 function setMenu(d: string) {
