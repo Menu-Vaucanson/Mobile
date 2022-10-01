@@ -11,7 +11,7 @@ function Motivation() {
 				Il a donc été créé dans l’optique d’être un menu de poche, pratique à l’utilisation.
 			</div>
 		</div>
-	)
+	);
 }
 
 function Contributor({ name, desc, img }) {
@@ -41,7 +41,7 @@ function Contributors() {
 			desc: 'Designer, Testeur',
 			img: Corinan
 		}
-	]
+	];
 
 	const C = contributors.map((c, i) => {
 		return <Contributor name={c.name} desc={c.desc} img={c.img} key={i} />
@@ -53,7 +53,7 @@ function Contributors() {
 			<div className='ContributorsTitle'>Contributeurs</div>
 			{C}
 		</div>
-	)
+	);
 }
 
 function TimeLineComp({ text, date }) {
@@ -65,7 +65,7 @@ function TimeLineComp({ text, date }) {
 				<p className="TimelineDate">{date}</p>
 			</div>
 		</div>
-	)
+	);
 }
 
 function Timeline() {
@@ -109,11 +109,11 @@ function Timeline() {
 			description: "Le code du projet passe en open-source, il est donc ouvert à tout le monde sur GitHub!",
 			date: "10 Septembre 2022",
 		}
-	]
+	];
 
 	const T = timelineElements.map((t, i) => {
 		return <TimeLineComp text={t.description} date={t.date} key={i} />
-	})
+	});
 
 	return (
 		<div className="Timeline">
@@ -129,7 +129,7 @@ function Project() {
 			<Contributors />
 			<Timeline />
 		</div>
-	)
+	);
 }
 
 export default Project;
