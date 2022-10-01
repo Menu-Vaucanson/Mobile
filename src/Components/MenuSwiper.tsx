@@ -2,8 +2,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards } from "swiper";
 
-import Dish from './Dish.tsx';
-import Rate from './Rate.tsx';
+import Dish from './Dish';
+import Rate from './Rate';
 
 function setMenu(d: string) {
 	const today = new Date();

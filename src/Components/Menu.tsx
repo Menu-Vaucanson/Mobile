@@ -4,7 +4,7 @@ import axios from 'axios';
 import "swiper/css";
 import "swiper/css/effect-cards";
 
-import MenuSwiper from './MenuSwiper.tsx';
+import MenuSwiper from './MenuSwiper';
 
 const url = 'https://menuvox.fr:8080';
 

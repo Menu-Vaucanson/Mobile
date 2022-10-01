@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import JSConfetti from 'js-confetti';
 
-import Star from './Star.tsx';
+import Star from './Star';
 
 let selected = 0;
 

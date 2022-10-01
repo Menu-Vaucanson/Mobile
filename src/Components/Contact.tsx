@@ -1,7 +1,7 @@
-import Dish from "./Dish.tsx";
+import Dish from "./Dish";
 
-import ContactLight from '../Themes/Contact/Light.ts';
-import ContactDark from '../Themes/Contact/Dark.ts';
+import ContactLight from '../Themes/Contact/Light';
+import ContactDark from '../Themes/Contact/Dark';
 
 function Contact({ theme }) {
 	const dish1 = {

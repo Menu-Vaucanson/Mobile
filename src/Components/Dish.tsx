@@ -1,12 +1,12 @@
-import blue from '../Themes/Menus/blue.ts';
-import red from '../Themes/Menus/red.ts';
-import green from '../Themes/Menus/green.ts';
-import yellow from '../Themes/Menus/yellow.ts';
+import blue from '../Themes/Menus/blue';
+import red from '../Themes/Menus/red';
+import green from '../Themes/Menus/green';
+import yellow from '../Themes/Menus/yellow';
 
-import blueDark from '../Themes/Menus/blueDark.ts';
-import redDark from '../Themes/Menus/redDark.ts';
-import greenDark from '../Themes/Menus/greenDark.ts';
-import yellowDark from '../Themes/Menus/yellowDark.ts';
+import blueDark from '../Themes/Menus/blueDark';
+import redDark from '../Themes/Menus/redDark';
+import greenDark from '../Themes/Menus/greenDark';
+import yellowDark from '../Themes/Menus/yellowDark';
 
 function Dish({ dish, theme }) {
 

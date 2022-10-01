@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import MenuBar from './MenuBar.tsx';
-import Menu from './Menu.tsx';
-import E404 from './404.tsx';
-import Contact from './Contact.tsx';
-import Informations from './Informations.tsx';
-import Settings from './Settings.tsx';
-import Project from './Project.tsx'
+import MenuBar from './MenuBar';
+import Menu from './Menu';
+import E404 from './404';
+import Contact from './Contact';
+import Informations from './Informations';
+import Settings from './Settings';
+import Project from './Project'
 
-import App from '../Themes/App.ts';
-import AppDark from '../Themes/AppDark.ts';
+import App from '../Themes/App';
+import AppDark from '../Themes/AppDark';
 
 function Main() {
 	let [theme, settheme] = useState(JSON.parse(window.localStorage.getItem('theme') as string));
