@@ -323,6 +323,7 @@ a {
 .ContributorIcon {
 	width: 40vw;
 	height: 40vw;
+	border-radius: 50%;
 }
 
 .MotivationText {
