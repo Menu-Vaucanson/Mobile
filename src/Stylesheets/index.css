@@ -13,6 +13,10 @@
 	src: url("/public/fonts/FiraMono-Bold.otf");
 }
 
+:root {
+	color-scheme: only light;
+}
+
 html,
 body {
 	font-family: "Fira Mono Regular";
