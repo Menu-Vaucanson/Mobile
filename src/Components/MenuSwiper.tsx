@@ -1,15 +1,18 @@
 /* eslint-disable eqeqeq */
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards } from "swiper";
 
-import Dish from './Dish';
-import Rate from './Rate';
+// @ts-ignore
+import Dish from './Dish.tsx';
+// @ts-ignore
+import Rate from './Rate.tsx';
 
-function setMenu(d) {
+function setMenu(d: string) {
 	const today = new Date();
 	const tomorrow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
 
-	const date = new Date(today.getFullYear(), d?.substring(3, 5) - 1, d?.substring(0, 2));
+	const date = new Date(today.getFullYear(), parseInt(d?.substring(3, 5)) - 1, parseInt(d?.substring(0, 2)));
 
 	const Days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
 
@@ -22,11 +25,11 @@ function setMenu(d) {
 	}
 }
 
-function setMenuEvening(d) {
+function setMenuEvening(d: string) {
 	const today = new Date();
 	const tomorrow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
 
-	const date = new Date(today.getFullYear(), d?.substring(3, 5) - 1, d?.substring(0, 2));
+	const date = new Date(today.getFullYear(), parseInt(d?.substring(3, 5)) - 1, parseInt(d?.substring(0, 2)));
 
 	const Days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
 
@@ -40,9 +43,9 @@ function setMenuEvening(d) {
 }
 
 function MenuSwiper({ menus, isEvening, css, theme }) {
-	const rMenus = [];
+	const rMenus: Array<any> = [];
 
-	menus.forEach((menu, i) => {
+	menus.forEach((menu: { menu: Array<any>, evening: Array<any>, error: number, date: string, errorMessage: string, month: number, day: number, errorEvening: string, errorEveningMessage: string }, i: number) => {
 		const title = setMenu(menu.date);
 		if (menu.error) {
 			rMenus.push(
@@ -65,7 +68,7 @@ function MenuSwiper({ menus, isEvening, css, theme }) {
 							{title}
 						</div>
 						<div className='MenuDishs'>
-							{menu.menu.map((dish, i) => {
+							{menu.menu.map((dish: {}, i: number) => {
 								return (
 									<Dish key={i} dish={dish} theme={theme} />
 								);
@@ -77,7 +80,7 @@ function MenuSwiper({ menus, isEvening, css, theme }) {
 			)
 		}
 		if (isEvening) {
-			const titleEvening = setMenuEvening(menu.date);
+			const titleEvening = setMenuEvening(menu.date.toString());
 			if (menu.errorEvening) {
 				if (typeof menu.errorEveningMessage != 'undefined') {
 					rMenus.push(

@@ -1,7 +1,8 @@
 /* eslint-disable eqeqeq */
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import MenuSwiper from './MenuSwiper';
+// @ts-ignore
+import MenuSwiper from './MenuSwiper.tsx';
 
 import "swiper/css";
 import "swiper/css/effect-cards";
@@ -10,7 +11,7 @@ import "swiper/css/effect-cards";
 const url = 'https://menuvox.fr:8080';
 
 function getMenusDate() {
-	const menus = [];
+	const menus: Array<{}> = [];
 	let date = new Date();
 	let date1 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
 	let date2 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate() + 1);
@@ -90,7 +91,7 @@ function getMenus(menus) {
 					const temp = d.data?.date?.split('/');
 					if (typeof temp == 'undefined') return d;
 					d.data.day = parseInt(temp[0]);
-					d.data.month = parseInt(temp[1] - 1);
+					d.data.month = temp[1] - 1;
 					d.data.year = parseInt(temp[2]);
 					return d;
 				});
@@ -110,9 +111,9 @@ function Menu({ theme }) {
 	);
 
 	useEffect(() => {
-		const isEvening = JSON.parse(window.localStorage.getItem('evening'));
+		const isEvening = JSON.parse(window.localStorage.getItem('evening') as string);
 
-		const cache = JSON.parse(sessionStorage.getItem('menuCache'));
+		const cache = JSON.parse(sessionStorage.getItem('menuCache') as string);
 		if (cache) {
 			if (!cache.length) {
 				if (new Date().getDay() == 6 || new Date().getDay() == 0) {
@@ -128,13 +129,13 @@ function Menu({ theme }) {
 					return;
 				}
 			}
-			setMenu(<MenuSwiper menus={cache} isEvening={isEvening} theme={theme} />);
+			setMenu(<MenuSwiper css={{}} menus={cache} isEvening={isEvening} theme={theme} />);
 			return;
 		}
 
-		getMenus(getMenusDate()).then(data => {
-			const datas = [];
-			data.forEach(d => {
+		getMenus(getMenusDate()).then((data: any) => {
+			const datas: Array<any> = [];
+			data.forEach((d: { error: number, data: any }) => {
 				if (!d?.error) {
 					datas.push(d.data);
 				}
@@ -154,7 +155,7 @@ function Menu({ theme }) {
 					return;
 				}
 			}
-			setMenu(<MenuSwiper menus={datas} isEvening={isEvening} theme={theme} />);
+			setMenu(<MenuSwiper css={{}} menus={datas} isEvening={isEvening} theme={theme} />);
 		})
 	}, [theme])
 	return (menu);

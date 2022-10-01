@@ -1,7 +1,12 @@
-import Dish from "./Dish";
+import React from "react";
 
-import ContactLight from '../Themes/Contact/Light';
-import ContactDark from '../Themes/Contact/Dark';
+// @ts-ignore
+import Dish from "./Dish.tsx";
+
+// @ts-ignore
+import ContactLight from '../Themes/Contact/Light.ts';
+// @ts-ignore
+import ContactDark from '../Themes/Contact/Dark.ts';
 
 function Contact({ theme }) {
 	const dish1 = {
@@ -22,6 +27,12 @@ function Contact({ theme }) {
 		style: 'green',
 		styleDark: 'greenDark'
 	}
+	const dish4 = {
+		name: 'Github',
+		content: 'Cliquez ici pour accéder à l\'organisation Github du projet.',
+		style: 'green',
+		styleDark: 'greenDark'
+	}
 
 	let css = ContactLight;
 	if (theme === 'dark') {
@@ -33,6 +44,7 @@ function Contact({ theme }) {
 			<Dish key={1} dish={dish1} theme={theme} />
 			<Dish key={2} dish={dish2} theme={theme} />
 			<Dish key={3} dish={dish3} theme={theme} />
+			<a href="https://github.com/Menu-Vaucanson"><Dish key={4} dish={dish4} theme={theme} /></a>
 		</div>
 	)
 }

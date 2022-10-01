@@ -1,10 +1,15 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-import SideMenuLight from '../Themes/SideBar/Light';
-import SideMenuDark from '../Themes/SideBar/Dark';
+// @ts-ignore
+import SideMenuLight from '../Themes/SideBar/Light.ts';
+// @ts-ignore
+import SideMenuDark from '../Themes/SideBar/Dark.ts';
 
-import SideMenuButtonLight from '../Themes/SideMenuButton/Light';
-import SideMenuButtonDark from '../Themes/SideMenuButton/Dark';
+// @ts-ignore
+import SideMenuButtonLight from '../Themes/SideMenuButton/Light.ts';
+// @ts-ignore
+import SideMenuButtonDark from '../Themes/SideMenuButton/Dark.ts';
 
 function SideMenu({ active, theme, isActive }) {
 	let css = Object.assign({}, SideMenuLight, { 'transform': '' });
