@@ -173,7 +173,8 @@ body {
 	border-radius: 1.5vmax;
 	padding: 1vmax;
 	margin-bottom: 2vmax;
-	background-color: #F5FEF5;
+	background-color: #D9D9D9;
+	border: 0.2vmax solid #B3B3B3;
 	white-space: pre-line;
 }
 

@@ -6,41 +6,34 @@ import InformationsLight from '../Themes/Informations/Light';
 import InformationsDark from '../Themes/Informations/Dark';
 
 function Informations({ theme }) {
-	const dish1 = {
+	const info1 = {
 		name: 'Contact',
-		content: 'Vous pouvez nous contacter ici.',
-		style: 'blue',
-		styleDark: 'blueDark'
+		content: 'Vous pouvez nous contacter ici.'
 	}
-	const dish2 = {
+
+	const info2 = {
 		name: 'Qui sommes-nous ?',
-		content: 'Nous sommes des élèves de terminale.',
-		style: 'red',
-		styleDark: 'redDark'
+		content: 'Nous sommes des élèves de terminale.'
 	}
-	const dish3 = {
+
+	const info3 = {
 		name: 'La réalisation',
-		content: 'Le site est réalisé en HTML, CSS et Javascript avec React. Le code source est disponible sur GitHub.',
-		style: 'blue',
-		styleDark: 'blueDark'
+		content: 'Le site est réalisé en HTML, CSS et Javascript avec React. Le code source est disponible sur GitHub.'
 	}
-	const dish4 = {
+
+	const info4 = {
 		name: 'Des questions ?',
-		content: 'Si vous avez une idée, une suggestion, un bug à rapporter, etc... vous pouvez nous contacter via la page de contact.',
-		style: 'red',
-		styleDark: 'redDark'
+		content: 'Si vous avez une idée, une suggestion, un bug à rapporter, etc... vous pouvez nous contacter via la page de contact.'
 	}
-	const dish5 = {
+
+	const info5 = {
 		name: 'Fiabilité',
-		content: 'Le menu affiché n’est qu’une copie de ceux publiés par l\'établissement, aucune information n’est donc garantie.',
-		style: 'blue',
-		styleDark: 'blueDark'
+		content: 'Le menu affiché n’est qu’une copie de ceux publiés par l\'établissement, aucune information n’est donc garantie.'
 	}
-	const dish6 = {
+
+	const info6 = {
 		name: 'Publication',
-		content: 'Nous récupérons les menus manuellement. Ils seront donc disponibles entre le vendredi soir et le mardi.',
-		style: 'red',
-		styleDark: 'redDark'
+		content: 'Nous récupérons les menus manuellement. Ils seront donc disponibles entre le vendredi soir et le mardi.'
 	}
 
 	let css = InformationsLight;
@@ -50,12 +43,12 @@ function Informations({ theme }) {
 
 	return (
 		<div className="Contact" style={css}>
-			<Link to={'../Contact'}><Dish key={1} dish={dish1} theme={theme} /></Link>
-			<Dish key={2} dish={dish2} theme={theme} />
-			<Dish key={3} dish={dish3} theme={theme} />
-			<Dish key={4} dish={dish4} theme={theme} />
-			<Dish key={5} dish={dish5} theme={theme} />
-			<Dish key={6} dish={dish6} theme={theme} />
+			<Link to={'../Contact'}><Dish key={1} dish={info1} theme={theme} /></Link>
+			<Dish key={2} dish={info2} theme={theme} />
+			<Dish key={3} dish={info3} theme={theme} />
+			<Dish key={4} dish={info4} theme={theme} />
+			<Dish key={5} dish={info5} theme={theme} />
+			<Dish key={6} dish={info6} theme={theme} />
 		</div>
 	)
 }
