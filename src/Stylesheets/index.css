@@ -350,7 +350,7 @@ a {
 	left: 0;
 	top: -5vh;
 	width: 4px;
-	height: 230vh;
+	height: calc(150vh + 200vw);
 	background-color: #403F4C;
 }
 

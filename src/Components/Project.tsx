@@ -108,10 +108,14 @@ function Timeline() {
 			title: "Le repo mobile est open-source",
 			description: "Le code du projet passe en open-source, il est donc ouvert à tout le monde sur GitHub!",
 			date: "10 Septembre 2022",
+		}, {
+			title: "Le site devient bien plus sécurisé",
+			description: "Le site fait en grand bond en termes de sécurité, il est désormais noté A+ sur la plupart des audits de sécurité !",
+			date: "3 Octobre 2022",
 		}
 	];
 
-	const T = timelineElements.map((t, i) => {
+	const T = timelineElements.map((t: { description: string, date: string }, i: number) => {
 		return <TimeLineComp text={t.description} date={t.date} key={i} />
 	});
 
