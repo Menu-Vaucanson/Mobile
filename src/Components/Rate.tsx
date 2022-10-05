@@ -12,6 +12,7 @@ function getRate(month: number, day: number, evening: number) {
 	if (evening) {
 		return new Promise(resolve => {
 			axios.get(`${url}/ratesEvening/${month + 1}/${day}`).catch(err => {
+				console.log(err);
 				resolve(null);
 			}).then((response: any) => {
 				resolve(response.data);
@@ -20,6 +21,7 @@ function getRate(month: number, day: number, evening: number) {
 	} else {
 		return new Promise(resolve => {
 			axios.get(`${url}/rates/${month + 1}/${day}`).catch(err => {
+				console.log(err);
 				resolve(null);
 			}).then((response: any) => {
 				resolve(response.data);
@@ -32,6 +34,7 @@ function postRate(month: number, day: number, rate: number, evening: boolean) {
 	if (evening) {
 		return new Promise(resolve => {
 			axios.post(`${url}/ratesEvening/${month + 1}/${day}`, { rate: rate, pc: false }).catch(err => {
+				console.log(err);
 				resolve(null);
 			}).then(response => {
 				resolve(response?.data);
@@ -40,12 +43,12 @@ function postRate(month: number, day: number, rate: number, evening: boolean) {
 	} else {
 		return new Promise(resolve => {
 			axios.post(`${url}/rates/${month + 1}/${day}`, { rate: rate, pc: false }).catch(err => {
+				console.log(err);
 				resolve(null);
 			}).then(response => {
 				resolve(response?.data);
 			});
 		});
-
 	}
 }
 
@@ -58,7 +61,7 @@ function Rate({ month, day, evening }) {
 
 	const [sendButton, setSendButton] = useState(<></>);
 
-	const [StarsCss, setStarsCss] = useState({});
+	const [StarsCss, setStarsCss] = useState({ 'display': 'none' });
 
 	function sendRate() {
 		let rates = JSON.parse(window.localStorage.getItem('rates') as string);
@@ -130,7 +133,7 @@ function Rate({ month, day, evening }) {
 			<div className='SendButton' onClick={sendRate}>
 				Envoyer
 			</div>
-		)
+		);
 	}
 
 	function setStar(number: number) {
@@ -193,11 +196,15 @@ function Rate({ month, day, evening }) {
 					setStarsCss({ 'display': 'none' });
 					getRate(month, day, evening).then((rate: any) => {
 						if (rate != null && rate.rate != null) {
-							setSendButton(<div className='RateText'>
-								La moyenne est de {rate.rate}
-							</div>);
+							setSendButton(
+								<div className='RateText'>
+									La moyenne est de {rate.rate}
+								</div>
+							);
 						}
 					});
+				} else {
+					setStarsCss({ 'display': 'block' });
 				}
 			} else {
 				if (rates.includes(`${month}/${day}`)) {
@@ -207,11 +214,16 @@ function Rate({ month, day, evening }) {
 							setSendButton(
 								<div className='RateText'>
 									La moyenne est de {rate.rate}
-								</div>);
+								</div>
+							);
 						}
 					});
+				} else {
+					setStarsCss({ 'display': 'block' });
 				}
 			}
+		} else {
+			setStarsCss({ 'display': 'block' });
 		}
 	}, [day, month, evening]);
 	const date = new Date();
