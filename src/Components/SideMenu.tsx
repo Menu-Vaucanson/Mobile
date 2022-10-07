@@ -8,7 +8,7 @@ import SideMenuButtonDark from '../Themes/SideMenuButton/Dark';
 
 function SideMenu({ active, theme, isActive }) {
 	let css = Object.assign({}, SideMenuLight, { 'transform': '' });
-	let Css = Object.assign({}, SideMenuButtonLight, { 'transform': 'translateX(-30vw)' });
+	let Css = Object.assign({}, SideMenuButtonLight);
 
 	if (active) {
 		css = Object.assign({}, css, { 'transform': 'translateX(110vw)' });
@@ -21,15 +21,30 @@ function SideMenu({ active, theme, isActive }) {
 	}
 
 	function Click() {
-		isActive(old => !old);
+		isActive((old: boolean) => !old);
 	}
+
+	const list: Array<{ title: string, link: string }> = [
+		{
+			title: 'Accueil',
+			link: '/'
+		}, {
+			title: 'Projet',
+			link: '/Project'
+		}, {
+			title: 'Informations',
+			link: '/Informations'
+		}, {
+			title: 'Paramètres',
+			link: '/Settings'
+		},
+	];
 
 	return (
 		<div className="SideMenu" style={css}>
-			<Link to={'/'} className='SideMenuElement' onClick={Click}><div style={Css}>Accueil</div></Link>
-			<Link to={'/Project'} className='SideMenuElement' onClick={Click}><div style={Css}>Projet</div></Link>
-			<Link to={'/Informations'} className='SideMenuElement' onClick={Click}><div style={Css}>Informations</div></Link>
-			<Link to={'/Settings'} className='SideMenuElement' onClick={Click}><div style={Css}>Paramètres</div></Link>
+			{list.map((element, i) => {
+				return <Link to={element.link} key={i} className='SideMenuElement' onClick={Click}><div style={Css}>{element.title}</div></Link>
+			})}
 		</div>
 	)
 }
