@@ -7,12 +7,12 @@ function Motivation() {
 		<div className='Motivation'>
 			<div className="MotivationTitle">Motivation</div>
 			<div className="MotivationText">
-			Le site a été créé pour que chacun puisse consulter le menu avant de réserver.
-			<br/>
-			Mais également pour satisfaire un besoin de consultation universel : Nous ne comptons plus le nombre de fois que nous nous sommes demandés ce que l’on mangeait ce midi.
-			<br/>
-			<br/>
-			Il a donc été pensé dans l’optique d’être un menu de poche, pratique à l’utilisation.
+				Le site a été créé afin que chacun puisse consulter le menu avant de réserver son repas.
+				<br />
+				Et également pour satisfaire un besoin de consultation universel : nous ne comptons plus le nombre de fois où nous nous sommes questionnés sur le menu.
+				<br />
+				<br />
+				Il a donc été pensé dans l’optique d’être un menu de poche, pratique à l’utilisation.
 			</div>
 		</div>
 	);
