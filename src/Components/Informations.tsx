@@ -17,8 +17,8 @@ function Informations({ theme }) {
 	}
 
 	const info3 = {
-		name: 'La réalisation',
-		content: 'Le site est réalisé en HTML, CSS et Javascript avec React. Le code source est disponible sur GitHub.'
+		name: 'Le code',
+		content: 'Le site est réalisé en HTML, CSS et JavaScript (TypeScript) avec React. Le code source est disponible sur GitHub.'
 	}
 
 	const info4 = {
