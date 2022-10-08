@@ -9,7 +9,7 @@ function Motivation() {
 			<div className="MotivationText">
 				Le site a été créé afin que chacun puisse consulter le menu avant de réserver son repas.
 				<br />
-				Et également pour satisfaire un besoin de consultation universel : nous ne comptons plus le nombre de fois où nous nous sommes questionnés sur le menu.
+				Et également pour satisfaire un besoin de consultation universel : nous ne comptons plus le nombre de fois où nous nous sommes interrogés sur la composition du menu.
 				<br />
 				<br />
 				Il a donc été pensé dans l’optique d’être un menu de poche, pratique à l’utilisation.
