@@ -114,7 +114,7 @@ function Timeline() {
 			date: "10 Septembre 2022",
 		}, {
 			title: "Le site devient bien plus sécurisé",
-			description: "Le site fait en grand bond en termes de sécurité, il est désormais noté A+ sur la plupart des audits de sécurité !",
+			description: "Le site fait un grand bond en termes de sécurité, il est désormais noté A+ par la plupart des audits de sécurité !",
 			date: "3 Octobre 2022",
 		}
 	];
