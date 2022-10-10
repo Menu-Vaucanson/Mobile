@@ -9,7 +9,7 @@ function Motivation() {
 			<div className="MotivationText">
 				Le site a été créé afin que chacun puisse consulter le menu avant de réserver son repas.
 				<br />
-				Et également pour satisfaire un besoin de consultation universel : nous ne comptons plus le nombre de fois où nous nous sommes questionnés sur le menu.
+				Et également pour satisfaire un besoin de consultation universel : nous ne comptons plus le nombre de fois où nous nous sommes interrogés sur la composition du menu.
 				<br />
 				<br />
 				Il a donc été pensé dans l’optique d’être un menu de poche, pratique à l’utilisation.
@@ -87,12 +87,12 @@ function Timeline() {
 		{
 			title: "Unel rejoint le projet",
 			description: "Unel rejoint le projet, il aide Wiwok dans le développement.",
-			date: "24 Juillet 2022",
+			date: "12 Juin 2022",
 		},
 		{
 			title: "Un nouveau site ?",
 			description: "Wiwok et Unel réfléchissent sérieusement à refaire l’interface complète du site.",
-			date: "24 Juillet 2022",
+			date: "10 Juillet 2022",
 		},
 		{
 			title: "Un nouveau site !",
@@ -108,13 +108,15 @@ function Timeline() {
 			title: "Le site et en test",
 			description: "Le site est terminé, il est en test et des petits fignolages sont en cours.",
 			date: "1 Septembre 2022",
-		}, {
-			title: "Le repo mobile est open-source",
-			description: "Le code du projet passe en open-source, il est donc ouvert à tout le monde sur GitHub!",
+		},
+		{
+			title: "Le projet est open-source",
+			description: "Le projet passe en open-source ! Le code est donc ouvert à tout le monde sur GitHub.",
 			date: "10 Septembre 2022",
-		}, {
+		},
+		{
 			title: "Le site devient bien plus sécurisé",
-			description: "Le site fait un grand bond en termes de sécurité, il est désormais noté A+ par la plupart des audits de sécurité !",
+			description: "Le site fait un grand bond en termes de sécurité, il est désormais noté A+ par la plupart des audits de sécurité web !",
 			date: "3 Octobre 2022",
 		}
 	];
