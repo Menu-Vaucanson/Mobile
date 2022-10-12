@@ -37,7 +37,7 @@ function SideMenu({ active, theme, isActive }) {
 		}, {
 			title: 'Paramètres',
 			link: '/Settings'
-		},
+		}
 	];
 
 	return (

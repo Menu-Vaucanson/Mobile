@@ -406,7 +406,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	color: black;
-	gap: 1.9vh;
+	gap: 1vh;
 }
 
 .legalBoxs {
@@ -415,18 +415,19 @@ a {
 	padding: 4vh;
 	margin-top: 3vh;
 	margin-bottom: 2vh;
-	border-radius: 0.5vmax;
+	border-radius: 1vmax;
 	display: flex;
 	flex-direction: column;
 	background-color: #D9D9D9;
 }
 
 .legalTitle {
-	font-size: 3.5vh;
+	font-size: 2.5vh;
+	font-family: "Fira Mono Medium";
 }
 
 .legalContent {
-	font-size: 2.25vh;
+	font-size: 2vh;
 }
 
 .legalPage {

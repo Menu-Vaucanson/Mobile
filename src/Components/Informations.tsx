@@ -12,8 +12,8 @@ function Informations({ theme }) {
 	}
 
 	const info2 = {
-		name: 'Qui sommes-nous ?',
-		content: 'Nous sommes des élèves de terminale.'
+		name: 'Légal',
+		content: 'Cliquez ici pour accéder au mentions légales.'
 	}
 
 	const info3 = {
@@ -44,7 +44,7 @@ function Informations({ theme }) {
 	return (
 		<div className="Contact" style={css}>
 			<Link to={'../Contact'}><Dish key={1} dish={info1} theme={theme} /></Link>
-			<Dish key={2} dish={info2} theme={theme} />
+			<Link to={'../legal'}><Dish key={1} dish={info2} theme={theme} /></Link>
 			<Dish key={3} dish={info3} theme={theme} />
 			<Dish key={4} dish={info4} theme={theme} />
 			<Dish key={5} dish={info5} theme={theme} />
