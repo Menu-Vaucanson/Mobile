@@ -11,6 +11,7 @@ import Project from './Project'
 
 import App from '../Themes/App';
 import AppDark from '../Themes/AppDark';
+import Legal from './Legal';
 
 function Main() {
 	let [theme, settheme] = useState(JSON.parse(window.localStorage.getItem('theme') as string));
@@ -33,6 +34,7 @@ function Main() {
 					<Route path='/Informations' element={<Informations theme={theme} />}></Route>
 					<Route path='/Settings' element={<Settings theme={theme} settheme={settheme} />}></Route>
 					<Route path='/Project' element={<Project />}></Route>
+					<Route path='/Legal' element={<Legal theme={theme} />}></Route>
 					<Route path='/*' element={<E404 theme={theme} />}></Route>
 				</Routes>
 			</div>
