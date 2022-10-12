@@ -1,4 +1,6 @@
 {
+	"display": "standalone",
+	"orientation": "portrait",
 	"short_name": "Menu Vaucanson",
 	"name": "The website of the Vaucanson menu",
 	"icons": [
@@ -9,7 +11,6 @@
 		}
 	],
 	"start_url": ".",
-	"display": "standalone",
 	"theme_color": "#000000",
 	"background_color": "#ffffff"
 }

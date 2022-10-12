@@ -30,6 +30,10 @@ body {
 	justify-content: flex-start;
 	padding: 0.7vh;
 	font-size: 3vmax;
+	width: calc(100vw - 1.4vh);
+	position: fixed;
+	z-index: 2;
+	top: 0;
 }
 
 .MenuBarTitle {
@@ -98,6 +102,7 @@ body {
 }
 
 .App {
+	margin-top: 7vh;
 	width: 100vw;
 	min-height: calc(98.6vh - 6vmax);
 	display: flex;
@@ -218,7 +223,7 @@ a {
 .Contact {
 	width: 80vw;
 	align-self: flex-start;
-	margin-top: 5vh;
+	margin-top: 2vh;
 }
 
 .Settings {
