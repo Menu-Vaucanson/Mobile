@@ -8,6 +8,9 @@ import redDark from '../Themes/Menus/redDark';
 import greenDark from '../Themes/Menus/greenDark';
 import yellowDark from '../Themes/Menus/yellowDark';
 
+import halloween from '../Themes/Menus/halloween';
+import halloweenDark from '../Themes/Menus/halloweenDark';
+
 function Dish({ dish, theme }) {
 
 	let css = {};
@@ -20,6 +23,8 @@ function Dish({ dish, theme }) {
 			css = greenDark;
 		} else if (dish.styleDark === 'yellowDark') {
 			css = yellowDark;
+		} else if (dish.styleDark === 'halloweenDark') {
+			css = halloweenDark;
 		}
 	} else {
 		if (dish.style === 'blue') {
@@ -30,6 +35,8 @@ function Dish({ dish, theme }) {
 			css = green;
 		} else if (dish.style === 'yellow') {
 			css = yellow;
+		} else if (dish.style === 'halloween') {
+			css = halloween;
 		}
 	}
 
@@ -43,7 +50,7 @@ function Dish({ dish, theme }) {
 				{dish.content}
 			</div>
 		</div>
-	)
+	);
 }
 
 export default Dish;

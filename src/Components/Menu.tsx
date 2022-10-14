@@ -75,7 +75,7 @@ function getMenusDate() {
 	return menus;
 }
 
-function getMenus(menus) {
+function getMenus(menus: Array<object>) {
 	return new Promise(resolve => {
 		axios.post(`${url}/menus`, { 'pc': false, 'days': menus }).catch(err => {
 			console.log(err);
@@ -85,11 +85,11 @@ function getMenus(menus) {
 				resolve(null);
 			} else {
 				let data = response.data.data;
-				data = data.map(d => {
+				data = data.map((d: { data: { day: number, month: number, year: number, date: string } }) => {
 					const temp = d.data?.date?.split('/');
 					if (typeof temp == 'undefined') return d;
 					d.data.day = parseInt(temp[0]);
-					d.data.month = temp[1] - 1;
+					d.data.month = parseInt(temp[1]) - 1;
 					d.data.year = parseInt(temp[2]);
 					return d;
 				});
@@ -155,7 +155,7 @@ function Menu({ theme }) {
 			}
 			setMenu(<MenuSwiper css={{}} menus={datas} isEvening={isEvening} theme={theme} />);
 		})
-	}, [theme])
+	}, [theme]);
 	return (menu);
 }
 
