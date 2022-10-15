@@ -19,7 +19,7 @@ function MenuBar({ theme }) {
 			<a className='MenuLogo' href='https://www.yout-ube.com/watch?v=dQw4w9WgXcQ'><img className='MenuLogo' src={Logo} alt='Logo' />
 			</a>
 		</div>
-	)
+	);
 }
 
 export default MenuBar;

@@ -12,7 +12,7 @@ function SideMenu({ active, theme, isActive }) {
 
 	if (active) {
 		css = Object.assign({}, css, { 'transform': 'translateX(110vw)' });
-		Css = Object.assign({}, Css, { 'transform': '' })
+		Css = Object.assign({}, Css, { 'transform': '' });
 	}
 
 	if (theme === 'dark') {
@@ -46,7 +46,7 @@ function SideMenu({ active, theme, isActive }) {
 				return <Link to={element.link} key={i} className='SideMenuElement' onClick={Click}><div style={Css}>{element.title}</div></Link>
 			})}
 		</div>
-	)
+	);
 }
 
 export default SideMenu;

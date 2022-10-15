@@ -59,7 +59,7 @@ function Settings({ theme, settheme }) {
 			<div className='Setting' onClick={CleanClick}>Effacer le cache</div>
 			<div className='Setting red' onClick={DeleteClick}>Effacer toute les données</div>
 		</div>
-	)
+	);
 }
 
 export default Settings;

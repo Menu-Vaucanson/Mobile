@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import "swiper/css";
@@ -114,7 +113,7 @@ function Menu({ theme }) {
 		const cache = JSON.parse(sessionStorage.getItem('menuCache') as string);
 		if (cache) {
 			if (!cache.length) {
-				if (new Date().getDay() == 6 || new Date().getDay() == 0) {
+				if (new Date().getDay() === 6 || new Date().getDay() === 0) {
 					cache.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
 				} else {
 					setMenu(
@@ -140,7 +139,7 @@ function Menu({ theme }) {
 			})
 			sessionStorage.setItem('menuCache', JSON.stringify(datas));
 			if (!datas.length) {
-				if (new Date().getDay() == 6 || new Date().getDay() == 0) {
+				if (new Date().getDay() === 6 || new Date().getDay() === 0) {
 					datas.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
 				} else {
 					setMenu(

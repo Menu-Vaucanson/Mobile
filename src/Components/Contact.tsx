@@ -36,7 +36,7 @@ function Contact({ theme }) {
 			<Dish key={3} dish={info3} theme={theme} />
 			<a href="https://github.com/Menu-Vaucanson"><Dish key={4} dish={info4} theme={theme} /></a>
 		</div>
-	)
+	);
 }
 
 export default Contact;

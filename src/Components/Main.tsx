@@ -39,7 +39,7 @@ function Main() {
 				</Routes>
 			</div>
 		</div>
-	)
+	);
 }
 
 export default Main;

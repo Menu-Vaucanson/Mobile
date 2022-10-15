@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards } from "swiper";
 
@@ -13,9 +12,9 @@ function setMenu(d: string) {
 
 	const Days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
 
-	if (today.getDate() == date.getDate()) {
+	if (today.getDate() === date.getDate()) {
 		return 'Menu du Jour';
-	} else if (tomorrow.getDate() == date.getDate()) {
+	} else if (tomorrow.getDate() === date.getDate()) {
 		return 'Menu de Demain';
 	} else {
 		return 'Menu de ' + Days[date.getDay()];
@@ -30,9 +29,9 @@ function setMenuEvening(d: string) {
 
 	const Days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
 
-	if (today.getDate() == date.getDate()) {
+	if (today.getDate() === date.getDate()) {
 		return 'Menu de ce soir';
-	} else if (tomorrow.getDate() == date.getDate()) {
+	} else if (tomorrow.getDate() === date.getDate()) {
 		return 'Menu de demain soir';
 	} else {
 		return 'Menu de ' + Days[date.getDay()] + ' soir';

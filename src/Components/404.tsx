@@ -9,7 +9,7 @@ function E404({ theme }) {
 		<div style={css}>
 			La page que vous cherchez n'existe pas.
 		</div>
-	)
+	);
 }
 
 export default E404;

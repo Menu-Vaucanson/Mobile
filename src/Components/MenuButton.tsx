@@ -25,7 +25,7 @@ function MenuButton({ theme }) {
 				<div style={css2}></div>
 			</div>
 		</div>
-	)
+	);
 }
 
 export default MenuButton;

@@ -50,7 +50,7 @@ function Informations({ theme }) {
 			<Dish key={5} dish={info5} theme={theme} />
 			<Dish key={6} dish={info6} theme={theme} />
 		</div>
-	)
+	);
 }
 
 export default Informations;
