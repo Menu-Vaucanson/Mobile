@@ -16,7 +16,7 @@ function Contact({ theme }) {
 
 	const info3 = {
 		name: 'Rencontre',
-		content: 'Vous pouvez nous trouver en TSTI2D2 au lycée Vaucanson'
+		content: 'Vous pouvez nous trouver en TSTI2D2 au lycée Vaucanson.'
 	}
 
 	const info4 = {
