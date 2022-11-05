@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import CustomCheck from "./CustomCheck";
 
-function Settings({ theme, settheme }) {
+function Settings({ theme, setTheme }) {
 	let actualTheme = false
 	if (theme === 'dark') {
 		actualTheme = true;
@@ -17,11 +17,11 @@ function Settings({ theme, settheme }) {
 	function DarkClick() {
 		setButton1(old => {
 			if (old) {
-				settheme('light');
+				setTheme('light');
 				window.localStorage.setItem('theme', JSON.stringify('light'));
 				return false;
 			} else {
-				settheme('dark');
+				setTheme('dark');
 				window.localStorage.setItem('theme', JSON.stringify('dark'));
 				return true;
 			}
@@ -45,7 +45,7 @@ function Settings({ theme, settheme }) {
 	}
 
 	function DeleteClick() {
-		settheme('light');
+		setTheme('light');
 		setButton1(false)
 		setButton2(false);
 		window.localStorage.clear();
