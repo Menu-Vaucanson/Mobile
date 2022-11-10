@@ -78,7 +78,7 @@ function MenuSwiper({ menus, isEvening, css, theme }) {
 		if (isEvening) {
 			const titleEvening = setMenuEvening(menu.date.toString());
 			if (menu.errorEvening) {
-				if (typeof menu.errorEveningMessage != 'undefined') {
+				if (menu.errorEveningMessage) {
 					rMenus.push(
 						<SwiperSlide key={i + 0.1} style={css}>
 							<div className="Menu">
