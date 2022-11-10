@@ -41,7 +41,7 @@ function setMenuEvening(d: string) {
 function MenuSwiper({ menus, isEvening, css, theme }) {
 	const rMenus: Array<JSX.Element> = [];
 
-	menus.forEach((menu: { menu: Array<any>, evening: Array<any>, error: number, date: string, errorMessage: string, month: number, day: number, errorEvening: string, errorEveningMessage: string }, i: number) => {
+	menus.forEach((menu: { menu: Array<JSX.Element>, evening: Array<JSX.Element>, error: number, date: string, errorMessage: string, month: number, day: number, errorEvening: string, errorEveningMessage: string }, i: number) => {
 		const title = setMenu(menu.date);
 		if (menu.error) {
 			rMenus.push(
