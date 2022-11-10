@@ -55,7 +55,7 @@ function MenuSwiper({ menus, isEvening, css, theme }) {
 						</div>
 					</div>
 				</SwiperSlide>
-			)
+			);
 		} else {
 			rMenus.push(
 				<SwiperSlide key={i} style={css}>
@@ -73,7 +73,7 @@ function MenuSwiper({ menus, isEvening, css, theme }) {
 						<Rate month={menu.month} day={menu.day} evening={false} />
 					</div>
 				</SwiperSlide>
-			)
+			);
 		}
 		if (isEvening) {
 			const titleEvening = setMenuEvening(menu.date.toString());
@@ -90,7 +90,7 @@ function MenuSwiper({ menus, isEvening, css, theme }) {
 								</div>
 							</div>
 						</SwiperSlide>
-					)
+					);
 				}
 			} else {
 				rMenus.push(
@@ -104,8 +104,7 @@ function MenuSwiper({ menus, isEvening, css, theme }) {
 									return (
 										<Dish key={i} dish={dish} theme={theme} />
 									);
-								})
-								}
+								})}
 							</div>
 							<Rate month={menu.month} day={menu.day} evening={true} />
 						</div>
