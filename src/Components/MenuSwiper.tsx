@@ -30,11 +30,11 @@ function setMenuEvening(d: string) {
 	const Days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
 
 	if (today.getDate() === date.getDate()) {
-		return 'Menu de ce soir';
+		return 'Menu de ce Soir';
 	} else if (tomorrow.getDate() === date.getDate()) {
-		return 'Menu de demain soir';
+		return 'Menu de Demain Soir';
 	} else {
-		return 'Menu de ' + Days[date.getDay()] + ' soir';
+		return 'Menu de ' + Days[date.getDay()] + ' Soir';
 	}
 }
 
