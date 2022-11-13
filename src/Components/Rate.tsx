@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
 import axios from 'axios';
 import JSConfetti from 'js-confetti';
+import { useEffect, useState } from 'react';
 
 import Star from './Star';
 

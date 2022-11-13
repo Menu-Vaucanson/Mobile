@@ -1,11 +1,11 @@
 import blue from '../Themes/Menus/blue';
-import red from '../Themes/Menus/red';
 import green from '../Themes/Menus/green';
+import red from '../Themes/Menus/red';
 import yellow from '../Themes/Menus/yellow';
 
 import blueDark from '../Themes/Menus/blueDark';
-import redDark from '../Themes/Menus/redDark';
 import greenDark from '../Themes/Menus/greenDark';
+import redDark from '../Themes/Menus/redDark';
 import yellowDark from '../Themes/Menus/yellowDark';
 
 import halloween from '../Themes/Menus/halloween';

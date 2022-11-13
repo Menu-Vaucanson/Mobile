@@ -1,7 +1,7 @@
 import Dish from "./Dish";
 
-import ContactLight from '../Themes/Contact/Light';
 import ContactDark from '../Themes/Contact/Dark';
+import ContactLight from '../Themes/Contact/Light';
 
 function Contact({ theme }) {
 	const info1 = {
@@ -21,7 +21,7 @@ function Contact({ theme }) {
 
 	const info4 = {
 		name: 'Github',
-		content: 'Le code est disponible ici, vous pouvez également apporter des suggestions et rapporter de bugs.'
+		content: 'Le code est disponible ici, vous pouvez également apporter des suggestions et rapporter des bugs.'
 	}
 
 	let css = ContactLight;

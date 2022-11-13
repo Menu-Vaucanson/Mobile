@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
-import MenuButton from './MenuButton';
 import Logo from '../Assets/Logo.svg';
-import MenuBarLight from '../Themes/MenuBar/Light';
 import MenuBarDark from '../Themes/MenuBar/Dark';
+import MenuBarLight from '../Themes/MenuBar/Light';
+import MenuButton from './MenuButton';
 
 
 function MenuBar({ theme }) {

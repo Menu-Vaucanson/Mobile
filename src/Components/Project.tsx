@@ -1,6 +1,6 @@
-import Unel from '../Assets/Unel.png'
-import Wiwok from '../Assets/Wiwok.png'
-import Corinan from '../Assets/Corinan.png'
+import Corinan from '../Assets/Corinan.png';
+import Unel from '../Assets/Unel.png';
+import Wiwok from '../Assets/Wiwok.png';
 
 function Motivation() {
 	return (

@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
-import MenuBar from './MenuBar';
-import Menu from './Menu';
 import E404 from './404';
 import Contact from './Contact';
 import Informations from './Informations';
-import Settings from './Settings';
-import Project from './Project'
 import Legal from './Legal';
+import Menu from './Menu';
+import MenuBar from './MenuBar';
+import Project from './Project';
+import Settings from './Settings';
 
 import App from '../Themes/App';
 import AppDark from '../Themes/AppDark';

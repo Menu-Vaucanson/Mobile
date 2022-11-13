@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 import Dish from './Dish';
 
-import InformationsLight from '../Themes/Informations/Light';
 import InformationsDark from '../Themes/Informations/Dark';
+import InformationsLight from '../Themes/Informations/Light';
 
 function Informations({ theme }) {
 	const info1 = {

@@ -1,5 +1,5 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards } from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Dish from './Dish';
 import Rate from './Rate';
