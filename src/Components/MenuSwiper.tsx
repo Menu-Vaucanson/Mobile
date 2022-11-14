@@ -16,8 +16,10 @@ function setMenu(d: string) {
 		return 'Menu du Jour';
 	} else if (tomorrow.getDate() === date.getDate()) {
 		return 'Menu de Demain';
-	} else {
+	} else if (Days[date.getDay()]) {
 		return 'Menu de ' + Days[date.getDay()];
+	} else {
+		return '';
 	}
 }
 
@@ -33,8 +35,10 @@ function setMenuEvening(d: string) {
 		return 'Menu de ce Soir';
 	} else if (tomorrow.getDate() === date.getDate()) {
 		return 'Menu de Demain Soir';
-	} else {
+	} else if (Days[date.getDay()]) {
 		return 'Menu de ' + Days[date.getDay()] + ' Soir';
+	} else {
+		return '';
 	}
 }
 
