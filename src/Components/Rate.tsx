@@ -83,15 +83,7 @@ function Rate({ month, day, evening }) {
 				</div>
 			</div>
 		);
-		postRate(month, day, selected, evening);
-		setSendButton(
-			<div className='MenuRate'>
-				<div className='RateText'>
-					Récupération en cours...
-				</div>
-			</div>
-		);
-		getRate(month, day, evening).then((rate: any) => {
+		postRate(month, day, selected, evening).then((rate: any) => {
 			const jsConfetti = new JSConfetti();
 			if (selected === 1) {
 				jsConfetti.addConfetti({ emojis: ['💩'] });
