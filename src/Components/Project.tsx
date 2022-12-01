@@ -60,11 +60,12 @@ function Contributors() {
 	);
 }
 
-function TimeLineComp({ text, date }) {
+function TimeLineComp({ title, text, date }) {
 	return (
 		<div className="TimelineElement">
 			<div className="TimelineIcon"></div>
 			<div className="TimelineBody">
+				<div className='TimelineTitle'>{title}</div>
 				<p>{text}</p>
 				<p className="TimelineDate">{date}</p>
 			</div>
@@ -118,11 +119,16 @@ function Timeline() {
 			title: "Le site devient bien plus sécurisé",
 			description: "Le site fait un grand bond en termes de sécurité, il est désormais noté A+ par la plupart des audits de sécurité web !",
 			date: "3 Octobre 2022",
+		},
+		{
+			title: "Le site dépasse les 1 000 vues mensuelles",
+			description: "Le site cummule un total de 1161 vues pour le mois de novembre, un record !",
+			date: "1 Décembre 2022",
 		}
 	];
 
-	const T = timelineElements.map((t: { description: string, date: string }, i: number) => {
-		return <TimeLineComp text={t.description} date={t.date} key={i} />
+	const T = timelineElements.map((t: { title: string, description: string, date: string }, i: number) => {
+		return <TimeLineComp title={t.title} text={t.description} date={t.date} key={i} />
 	});
 
 	return (
