@@ -11,6 +11,12 @@ import yellowDark from '../Themes/Menus/yellowDark';
 import halloween from '../Themes/Menus/halloween';
 import halloweenDark from '../Themes/Menus/halloweenDark';
 
+
+import ChristmasBlue from '../Themes/Menus/ChristmasBlue';
+import ChristmasRed from '../Themes/Menus/ChristmasRed';
+import ChristmasGreen from '../Themes/Menus/ChristmasGreen';
+import ChristmasYellow from '../Themes/Menus/ChristmasYellow';
+
 function Dish({ dish, theme }) {
 
 	let css = {};
@@ -25,6 +31,14 @@ function Dish({ dish, theme }) {
 			css = yellowDark;
 		} else if (dish.styleDark === 'halloweenDark') {
 			css = halloweenDark;
+		} else if (dish.styleDark === 'ChristmasBlue') {
+			css = ChristmasBlue;
+		} else if (dish.styleDark === 'ChristmasRed') {
+			css = ChristmasRed;
+		} else if (dish.styleDark === 'ChristmasGreen') {
+			css = ChristmasGreen;
+		} else if (dish.styleDark === 'ChristmasYellow') {
+			css = ChristmasYellow;
 		}
 	} else {
 		if (dish.style === 'blue') {
@@ -37,6 +51,14 @@ function Dish({ dish, theme }) {
 			css = yellow;
 		} else if (dish.style === 'halloween') {
 			css = halloween;
+		} else if (dish.styleDark === 'ChristmasBlue') {
+			css = ChristmasBlue;
+		} else if (dish.styleDark === 'ChristmasRed') {
+			css = ChristmasRed;
+		} else if (dish.styleDark === 'ChristmasGreen') {
+			css = ChristmasGreen;
+		} else if (dish.styleDark === 'ChristmasYellow') {
+			css = ChristmasYellow;
 		}
 	}
 

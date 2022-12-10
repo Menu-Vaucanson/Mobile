@@ -1,447 +1,450 @@
 @font-face {
-    font-family: "Fira Mono Regular";
-    src: url("/public/fonts/FiraMono-Regular.otf");
+	font-family: "Fira Mono Regular";
+	src: url("/public/fonts/FiraMono-Regular.otf");
 }
 
 @font-face {
-    font-family: "Fira Mono Medium";
-    src: url("/public/fonts/FiraMono-Medium.otf");
+	font-family: "Fira Mono Medium";
+	src: url("/public/fonts/FiraMono-Medium.otf");
 }
 
 @font-face {
-    font-family: "Fira Mono Bold";
-    src: url("/public/fonts/FiraMono-Bold.otf");
+	font-family: "Fira Mono Bold";
+	src: url("/public/fonts/FiraMono-Bold.otf");
 }
 
 :root {
-    color-scheme: only light;
+	color-scheme: only light;
 }
 
 html,
 body {
-    font-family: "Fira Mono Regular";
-    margin: 0;
-    overflow-x: hidden;
+	font-family: "Fira Mono Regular";
+	margin: 0;
+	overflow-x: hidden;
 }
 
 .MenuBar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0.7vh;
-    font-size: 3vmax;
-    width: calc(100vw - 1.4vh);
-    position: fixed;
-    z-index: 2;
-    top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0.7vh;
+	font-size: 3vmax;
+	width: calc(100vw - 1.4vh);
+	position: fixed;
+	z-index: 2;
+	top: 0;
 }
 
 .MenuBarTitle {
-    text-decoration: none;
-    font-size: 3.25vmax;
-    font-family: "Fira Mono Medium";
-    width: max-content;
-    height: fit-content;
-    margin-left: auto;
+	text-decoration: none;
+	font-size: 3.25vmax;
+	font-family: "Fira Mono Medium";
+	width: max-content;
+	height: fit-content;
+	margin-left: auto;
 }
 
 .MenuButton {
-    display: flex;
-    flex-direction: column;
-    width: 4.5vmax;
-    height: 4.5vmax;
-    padding: 0.75vmax;
-    align-items: flex-start;
-    justify-content: space-evenly;
+	display: flex;
+	flex-direction: column;
+	width: 4.5vmax;
+	height: 4.5vmax;
+	padding: 0.75vmax;
+	align-items: flex-start;
+	justify-content: space-evenly;
 }
 
 .MenuButton div {
-    background-color: #3366FE;
-    box-shadow: -4px 4px 8px rgba(0, 75, 204, 0.5);
-    height: 0.7vmax;
-    width: 1.5vmax;
-    transition-duration: 200ms;
+	background-color: #3366FE;
+	box-shadow: -4px 4px 8px rgba(0, 75, 204, 0.5);
+	height: 0.7vmax;
+	width: 1.5vmax;
+	transition-duration: 200ms;
 }
 
 .MenuButton div:nth-child(1) {
-    width: 4.5vmax;
+	width: 4.5vmax;
 }
 
 .MenuButton div:nth-child(2) {
-    width: 3vmax;
+	width: 3vmax;
 }
 
 .SideMenu {
-    z-index: 5;
-    position: absolute;
-    top: 7.4vh;
-    left: -110vw;
-    width: 100vw;
-    height: 92.6vh;
-    display: flex;
-    transition: 200ms;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 2vw 2vh 5vmax rgba(0, 0, 0, 0.5);
+	z-index: 5;
+	position: absolute;
+	top: 7.4vh;
+	left: -110vw;
+	width: 100vw;
+	height: 92.6vh;
+	display: flex;
+	transition: 200ms;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 2vw 2vh 5vmax rgba(0, 0, 0, 0.5);
 }
 
 .SideMenu div {
-    text-align: center;
-    width: 60vw;
-    height: max-content;
-    border-radius: 1vmax;
-    padding: 1vmax;
-    font-size: 2vmax;
-    text-shadow: none;
-    box-shadow: 0 3px 1vmax rgba(0, 0, 0, 0.25);
+	text-align: center;
+	width: 60vw;
+	height: max-content;
+	border-radius: 1vmax;
+	padding: 1vmax;
+	font-size: 2vmax;
+	text-shadow: none;
+	box-shadow: 0 3px 1vmax rgba(0, 0, 0, 0.25);
 }
 
 .SideMenuElement {
-    border-radius: 1vmax;
-    margin-top: 2vh;
+	border-radius: 1vmax;
+	margin-top: 2vh;
 }
 
 .App {
-    margin-top: 7vh;
-    width: 100vw;
-    min-height: calc(98.6vh - 6vmax);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	margin-top: 7vh;
+	width: 100vw;
+	min-height: calc(98.6vh - 6vmax);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .Menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    width: 78vw;
-    height: max-content;
-    border-radius: 1.5vmax;
-    border: 1vw #B3B3B3 solid;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 78vw;
+	height: max-content;
+	border-radius: 1.5vmax;
+	border: 1vw #B3B3B3 solid;
 }
 
 .MenuError {
-    font-family: 'Fira Mono Medium';
-    text-align: center;
-    padding: 1vmax;
-    margin-bottom: 50vh;
+	font-family: 'Fira Mono Medium';
+	text-align: center;
+	padding: 1vmax;
+	margin-bottom: 50vh;
 }
 
 .MenuTitle {
-    font-family: 'Fira Mono Bold';
-    text-align: center;
-    padding: 2vmax 0;
-    font-size: 2.5vmax;
+	font-family: 'Fira Mono Bold';
+	text-align: center;
+	padding: 2vmax 0;
+	font-size: 2.5vmax;
 }
 
 .RateText {
-    text-align: center;
-    font-family: 'Fira Mono Medium';
+	text-align: center;
+	font-family: 'Fira Mono Medium';
 }
 
 .MenuRate {
-    margin-bottom: 2vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	margin-bottom: 2vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .Stars {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .Star {
-    width: 10vw;
-    height: 10vw;
-    padding: 2vw;
+	width: 10vw;
+	height: 10vw;
+	padding: 2vw;
 }
 
 .SendButton {
-    background-color: #B3B3B3;
-    padding: 5vw 5vh;
-    border-radius: 2vmax;
-    font-size: 2.5vmax;
-    font-family: 'Fira Mono Medium';
+	background-color: #B3B3B3;
+	padding: 5vw 5vh;
+	border-radius: 2vmax;
+	font-size: 2.5vmax;
+	font-family: 'Fira Mono Medium';
 }
 
 .Dish {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 1.5vmax;
-    padding: 1vmax;
-    margin-bottom: 2vmax;
-    background-color: #D9D9D9;
-    border: 0.2vmax solid #B3B3B3;
-    white-space: pre-line;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	background-position: center !important;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1.5vmax;
+	padding: 1vmax;
+	margin-bottom: 2vmax;
+	background-color: #D9D9D9;
+	border: 0.2vmax solid #B3B3B3;
+	white-space: pre-line;
 }
 
 .MenuDishs {
-    display: flex;
-    flex-direction: column;
-    width: 76vw;
-    justify-content: flex-start;
+	display: flex;
+	flex-direction: column;
+	width: 76vw;
+	justify-content: flex-start;
 }
 
 .DishTitle {
-    font-family: 'Fira Mono Medium';
-    color: black;
+	font-family: 'Fira Mono Medium';
+	color: black;
 }
 
 .DishContent {
-    text-align: center;
-    color: black;
+	text-align: center;
+	color: black;
 }
 
 .swiper {
-    width: 80vw;
-    align-self: flex-start;
-    height: max-content;
-    margin-top: 5vh;
+	width: 80vw;
+	align-self: flex-start;
+	height: max-content;
+	margin-top: 5vh;
 }
 
 .swiper-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: max-content;
-    height: max-content;
-    border-radius: 1.5vmax;
-    background-color: #D9D9D9;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: max-content;
+	height: max-content;
+	border-radius: 1.5vmax;
+	background-color: #D9D9D9;
 }
 
 a {
-    color: initial;
-    text-decoration: none;
+	color: initial;
+	text-decoration: none;
 }
 
 .Contact {
-    width: 80vw;
-    align-self: flex-start;
-    margin-top: 2vh;
+	width: 80vw;
+	align-self: flex-start;
+	margin-top: 2vh;
 }
 
 .Settings {
-    align-self: flex-start;
-    margin-top: 5vh;
+	align-self: flex-start;
+	margin-top: 5vh;
 }
 
 .Setting {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 60vw;
-    height: 4vmax;
-    border-radius: 1vmax;
-    padding: 1vmax;
-    font-size: 2vmax;
-    text-shadow: none;
-    background-color: #B3B3B3;
-    margin-top: 1vh;
-    box-shadow: 0 3px 1vmax rgba(0, 0, 0, 0.25);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 60vw;
+	height: 4vmax;
+	border-radius: 1vmax;
+	padding: 1vmax;
+	font-size: 2vmax;
+	text-shadow: none;
+	background-color: #B3B3B3;
+	margin-top: 1vh;
+	box-shadow: 0 3px 1vmax rgba(0, 0, 0, 0.25);
 }
 
 .Setting:active {
-    box-shadow: none;
+	box-shadow: none;
 }
 
 .red {
-    background-color: rgb(255, 94, 94);
+	background-color: rgb(255, 94, 94);
 }
 
 .check {
-    border-radius: 1vmax;
-    height: 4vmax;
-    width: 4vmax;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+	border-radius: 1vmax;
+	height: 4vmax;
+	width: 4vmax;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
 }
 
 .MenuWaiting {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80vw;
-    height: max-content;
-    border-radius: 1.5vmax;
-    background-color: #B3B3B3;
-    align-self: flex-start;
-    margin-top: 5vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80vw;
+	height: max-content;
+	border-radius: 1.5vmax;
+	background-color: #B3B3B3;
+	align-self: flex-start;
+	margin-top: 5vh;
 }
 
 .WaitingError {
-    font-family: 'Fira Mono Medium';
-    text-align: center;
-    padding: 0 1vw;
-    margin: 10vh 0;
+	font-family: 'Fira Mono Medium';
+	text-align: center;
+	padding: 0 1vw;
+	margin: 10vh 0;
 }
 
 .MotivationTitle {
-    font-size: 4vmax;
-    font-weight: bold;
+	font-size: 4vmax;
+	font-weight: bold;
 }
 
 .Motivation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1vmax;
-    background-color: #403F4C;
-    color: black;
-    background-color: #D9D9D9;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1vmax;
+	background-color: #403F4C;
+	color: black;
+	background-color: #D9D9D9;
 }
 
 .ContributorsBox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: #403F4C;
-    color: #F5FEF5;
-    text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: #403F4C;
+	color: #F5FEF5;
+	text-align: center;
 }
 
 .ContributorBox {
-    width: 80vw;
-    margin: 2.5vh;
+	width: 80vw;
+	margin: 2.5vh;
 }
 
 .ContributorsTitle {
-    font-size: 4vmax;
-    font-weight: bold;
-    margin-top: 3vh;
+	font-size: 4vmax;
+	font-weight: bold;
+	margin-top: 3vh;
 }
 
 .ContributorName {
-    font-size: 3vmax;
-    font-weight: bold;
+	font-size: 3vmax;
+	font-weight: bold;
 }
 
 .ContributorDescription {
-    font-size: 2.5vmax;
+	font-size: 2.5vmax;
 }
 
 .ContributorIcon {
-    width: 40vw;
-    height: 40vw;
-    border-radius: 50%;
+	width: 40vw;
+	height: 40vw;
+	border-radius: 50%;
 }
 
 .MotivationText {
-    padding: 2vh 2vw;
-    font-size: 2vmax;
+	padding: 2vh 2vw;
+	font-size: 2vmax;
 }
 
 .Timeline {
-    position: relative;
-    padding-left: 15vw;
-    margin: 5vh 0 0 10vw;
-    color: #F5FEF5;
-    width: 70vw;
+	position: relative;
+	padding-left: 15vw;
+	margin: 5vh 0 0 10vw;
+	color: #F5FEF5;
+	width: 70vw;
 }
 
 .Timeline:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: -5vh;
-    width: 4px;
-    height: 350vh;
-    background-color: #403F4C;
+	content: '';
+	position: absolute;
+	left: 0;
+	top: -5vh;
+	width: 4px;
+	height: 350vh;
+	background-color: #403F4C;
 }
 
 .TimelineTitle {
-    font-size: 3vh;
-    font-family: "Fira Mono Bold";
+	font-size: 3vh;
+	font-family: "Fira Mono Bold";
 }
 
 .TimelineElement {
-    position: relative;
-    margin-bottom: 5vh;
+	position: relative;
+	margin-bottom: 5vh;
 }
 
 .TimelineIcon {
-    position: absolute;
-    left: -20.5vw;
-    top: 1vh;
-    width: 12vw;
-    height: 12vw;
-    border-radius: 50%;
-    background: #403F4C;
+	position: absolute;
+	left: -20.5vw;
+	top: 1vh;
+	width: 12vw;
+	height: 12vw;
+	border-radius: 50%;
+	background: #403F4C;
 }
 
 .TimelineBody {
-    background: #403F4C;
-    border-radius: 1vmax;
-    padding: 3vh 4vw;
+	background: #403F4C;
+	border-radius: 1vmax;
+	padding: 3vh 4vw;
 }
 
 .TimelineBody:before {
-    content: '';
-    background: inherit;
-    width: 5vw;
-    height: 5vw;
-    position: absolute;
-    left: -2vw;
-    transform: rotate(45deg);
-    border-radius: 0.5vmax;
+	content: '';
+	background: inherit;
+	width: 5vw;
+	height: 5vw;
+	position: absolute;
+	left: -2vw;
+	transform: rotate(45deg);
+	border-radius: 0.5vmax;
 }
 
 .TimelineDate {
-    font-style: italic;
-    opacity: 0.5;
-    margin-top: 3vh;
-    font-size: 1.5vmax;
+	font-style: italic;
+	opacity: 0.5;
+	margin-top: 3vh;
+	font-size: 1.5vmax;
 }
 
 .ProjectBox {
-    background-color: #D9D9D9;
+	background-color: #D9D9D9;
 }
 
 .MenuLogo {
-    width: 5.39vmax;
-    height: 4.5vmax;
-    margin-left: auto;
-    margin-right: 0.75vmax;
+	width: 5.39vmax;
+	height: 4.5vmax;
+	margin-left: auto;
+	margin-right: 0.75vmax;
 }
 
 .legalBox {
-    display: flex;
-    flex-direction: column;
-    color: black;
-    gap: 1vh;
+	display: flex;
+	flex-direction: column;
+	color: black;
+	gap: 1vh;
 }
 
 .legalBoxs {
-    gap: 5.2vh;
-    width: 70vw;
-    padding: 4vh;
-    margin-top: 3vh;
-    margin-bottom: 2vh;
-    border-radius: 1vmax;
-    display: flex;
-    flex-direction: column;
-    background-color: #D9D9D9;
+	gap: 5.2vh;
+	width: 70vw;
+	padding: 4vh;
+	margin-top: 3vh;
+	margin-bottom: 2vh;
+	border-radius: 1vmax;
+	display: flex;
+	flex-direction: column;
+	background-color: #D9D9D9;
 }
 
 .legalTitle {
-    font-size: 2.5vh;
-    font-family: "Fira Mono Medium";
+	font-size: 2.5vh;
+	font-family: "Fira Mono Medium";
 }
 
 .legalContent {
-    font-size: 2vh;
+	font-size: 2vh;
 }
 
 .legalPage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
