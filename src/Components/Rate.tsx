@@ -6,25 +6,25 @@ import Star from './Star';
 
 let selected = 0;
 
-const url = 'https://menuvox.fr:8080'
+const url = 'https://menuvox.fr:8080';
 
 function getRate(month: number, day: number, evening: number) {
 	if (evening) {
 		return new Promise(resolve => {
 			axios.get(`${url}/ratesEvening/${month + 1}/${day}`).catch(err => {
-				console.log(err);
+				console.error(err);
 				resolve(null);
 			}).then((response: any) => {
-				resolve(response.data);
+				resolve(response?.data);
 			});
 		});
 	} else {
 		return new Promise(resolve => {
 			axios.get(`${url}/rates/${month + 1}/${day}`).catch(err => {
-				console.log(err);
+				console.error(err);
 				resolve(null);
 			}).then((response: any) => {
-				resolve(response.data);
+				resolve(response?.data);
 			});
 		});
 	}
@@ -34,7 +34,7 @@ function postRate(month: number, day: number, rate: number, evening: boolean) {
 	if (evening) {
 		return new Promise(resolve => {
 			axios.post(`${url}/ratesEvening/${month + 1}/${day}`, { rate: rate, pc: false }).catch(err => {
-				console.log(err);
+				console.error(err);
 				resolve(null);
 			}).then(response => {
 				resolve(response?.data);
@@ -43,7 +43,7 @@ function postRate(month: number, day: number, rate: number, evening: boolean) {
 	} else {
 		return new Promise(resolve => {
 			axios.post(`${url}/rates/${month + 1}/${day}`, { rate: rate, pc: false }).catch(err => {
-				console.log(err);
+				console.error(err);
 				resolve(null);
 			}).then(response => {
 				resolve(response?.data);
