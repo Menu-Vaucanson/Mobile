@@ -28,7 +28,7 @@ function Informations({ theme }) {
 
 	const info5 = {
 		name: 'Fiabilité',
-		content: 'Les menus affichés ne sont que des copies de ceux fournis par l\'établissement.Ils sont également sous réserve de modification.'
+		content: 'Les menus affichés ne sont que des copies de ceux fournis par l\'établissement. Ils sont également sous réserve de modification.'
 	}
 
 	const info6 = {
