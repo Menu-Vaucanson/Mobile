@@ -28,12 +28,12 @@ function Informations({ theme }) {
 
 	const info5 = {
 		name: 'Fiabilité',
-		content: 'Le menu affiché n’est qu’une copie de ceux publiés par l\'établissement, aucune information n’est donc garantie.'
+		content: 'Les menus affichés ne sont que des copies de ceux fournis par l\'établissement.Ils sont également sous réserve de modification.'
 	}
 
 	const info6 = {
 		name: 'Publication',
-		content: 'Nous récupérons les menus manuellement. Ils seront donc disponibles entre le vendredi soir et le mardi.'
+		content: 'Les menus nous sont transmis par l\'établissement. Ils seront disponibles en fin de semaine.'
 	}
 
 	let css = InformationsLight;
