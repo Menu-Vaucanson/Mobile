@@ -106,7 +106,7 @@ function Timeline() {
 			date: "9 Août 2022",
 		},
 		{
-			title: "Le site et en test",
+			title: "Le site est en test",
 			description: "Le site est terminé, il est en test et des petits fignolages sont en cours.",
 			date: "1 Septembre 2022",
 		},
