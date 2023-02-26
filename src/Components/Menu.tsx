@@ -77,7 +77,7 @@ function getMenusDate() {
 function getMenus(menus: Array<object>) {
 	return new Promise(resolve => {
 		axios.post(`${url}/menus`, { 'pc': false, 'days': menus }).catch(err => {
-			console.log(err);
+			console.error(err);
 			resolve(null);
 		}).then(response => {
 			if (typeof response == 'undefined') {
