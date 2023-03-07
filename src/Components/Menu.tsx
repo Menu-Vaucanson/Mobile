@@ -136,7 +136,7 @@ function Menu({ theme }) {
 				if (!d?.error) {
 					datas.push(d.data);
 				}
-			})
+			});
 			sessionStorage.setItem('menuCache', JSON.stringify(datas));
 			if (!datas.length) {
 				if (new Date().getDay() === 6 || new Date().getDay() === 0) {
@@ -153,7 +153,7 @@ function Menu({ theme }) {
 				}
 			}
 			setMenu(<MenuSwiper css={{}} menus={datas} isEvening={isEvening} theme={theme} />);
-		})
+		});
 	}, [theme]);
 	return (menu);
 }

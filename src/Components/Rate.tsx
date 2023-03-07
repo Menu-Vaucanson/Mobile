@@ -107,7 +107,8 @@ function Rate({ month, day, evening }) {
 						<div className='RateText'>
 							La moyenne est de {rate.rate}
 						</div>
-					</div>);
+					</div>
+				);
 			} else {
 				setSendButton(
 					<div className='MenuRate'>
