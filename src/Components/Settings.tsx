@@ -55,7 +55,7 @@ function Settings({ theme, setTheme }) {
 	return (
 		<div className="Settings">
 			<div className='Setting' onClick={DarkClick}>Mode sombre<CustomCheck type={Button1} /></div>
-			<div className='Setting' onClick={EveningClick}>Mode interne <CustomCheck type={Button2} /></div>
+			{/*<div className='Setting' onClick={EveningClick}>Mode interne <CustomCheck type={Button2} /></div>*/}
 			<div className='Setting' onClick={CleanClick}>Effacer le cache</div>
 			<div className='Setting red' onClick={DeleteClick}>Effacer toute les données</div>
 		</div>
