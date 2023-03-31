@@ -88,42 +88,47 @@ function Timeline() {
 		{
 			title: "Unel rejoint le projet",
 			description: "Unel rejoint le projet, il aide Wiwok dans le développement.",
-			date: "12 Juin 2022",
+			date: "12 Juin 2022"
 		},
 		{
 			title: "Un nouveau site ?",
 			description: "Wiwok et Unel réfléchissent sérieusement à refaire l’interface complète du site.",
-			date: "10 Juillet 2022",
+			date: "10 Juillet 2022"
 		},
 		{
 			title: "Un nouveau site !",
 			description: "Il est maintenant décidé que le site doit être refait de manière plus propre. Les premières maquettes sont créées.",
-			date: "24 Juillet 2022",
+			date: "24 Juillet 2022"
 		},
 		{
 			title: "Corinan nous rejoint",
 			description: "On n'a jamais trop d’aide, Corinan vient en renfort sur les maquettes, les corrections, etc...",
-			date: "9 Août 2022",
+			date: "9 Août 2022"
 		},
 		{
 			title: "Le site est en test",
 			description: "Le site est terminé, il est en test et des petits fignolages sont en cours.",
-			date: "1 Septembre 2022",
+			date: "1 Septembre 2022"
 		},
 		{
 			title: "Le projet est open-source",
 			description: "Le projet passe en open-source ! Le code est donc ouvert à tout le monde sur GitHub.",
-			date: "10 Septembre 2022",
+			date: "10 Septembre 2022"
 		},
 		{
 			title: "Le site devient bien plus sécurisé",
 			description: "Le site fait un grand bond en termes de sécurité, il est désormais noté A+ par la plupart des audits de sécurité web !",
-			date: "3 Octobre 2022",
+			date: "3 Octobre 2022"
 		},
 		{
 			title: "Le site dépasse les 1 000 vues mensuelles",
-			description: "Le site cummule un total de 1161 vues pour le mois de novembre, un record !",
-			date: "1 Décembre 2022",
+			description: "Le site cummule un total de 1161 vues pour le mois de Novembre, un record !",
+			date: "1 Décembre 2022"
+		},
+		{
+			title: "Le site dépasse les 2 000 vues mensuelles",
+			description: "Le site cummule un total de 2000 vues pour le mois de Mars, un record !",
+			date: "1 Avril 2022"
 		}
 	];
 
