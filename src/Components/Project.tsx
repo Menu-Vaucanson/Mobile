@@ -133,7 +133,7 @@ function Timeline() {
 		},
 		{
 			title: "Le site dépasse les 2 000 vues mensuelles",
-			description: "Le site cummule un total de 2000 vues pour le mois de Mars, un record !",
+			description: "Le site cummule un total de 2026 vues pour le mois de Mars, un nouveau record !",
 			date: "1 Avril 2022"
 		}
 	];
