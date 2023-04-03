@@ -155,7 +155,8 @@ function Menu({ theme }) {
 			setMenu(<MenuSwiper css={{}} menus={datas} isEvening={isEvening} theme={theme} />);
 		});
 	}, [theme]);
-	return (menu);
+
+	return menu;
 }
 
 export default Menu;

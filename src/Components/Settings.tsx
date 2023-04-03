@@ -3,19 +3,11 @@ import { useState } from 'react';
 import CustomCheck from "./CustomCheck";
 
 function Settings({ theme, setTheme }) {
-	let actualTheme = false
-	if (theme === 'dark') {
-		actualTheme = true;
-	}
-
-	const actualEvening = JSON.parse(window.localStorage.getItem('evening') as string);
-
-
-	const [Button1, setButton1] = useState(actualTheme);
-	const [Button2, setButton2] = useState(actualEvening);
+	const [Button1, setButton1] = useState(theme === 'dark' ? true : false);
+	const [Button2, setButton2] = useState(JSON.parse(window.localStorage.getItem('evening') as string));
 
 	function DarkClick() {
-		setButton1(old => {
+		setButton1((old: boolean) => {
 			if (old) {
 				setTheme('light');
 				window.localStorage.setItem('theme', JSON.stringify('light'));
@@ -29,7 +21,7 @@ function Settings({ theme, setTheme }) {
 	}
 
 	function EveningClick() {
-		setButton2((old: any) => {
+		setButton2((old: boolean) => {
 			if (old) {
 				window.localStorage.setItem('evening', JSON.stringify(false));
 				return false;

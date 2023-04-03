@@ -6,9 +6,9 @@ import Dark from '../Themes/SideMenuButtonDiv/Dark';
 import Light from '../Themes/SideMenuButtonDiv/Light';
 
 function MenuButton({ theme }) {
-	const [isActive, setisActive] = useState(false);
+	const [isActive, setIsActive] = useState(false);
 	function Click() {
-		setisActive(old => !old);
+		setIsActive(old => !old);
 	}
 
 	let css1 = {};
@@ -18,10 +18,7 @@ function MenuButton({ theme }) {
 		css2 = { 'transform': 'translateX(3vmax)' }
 	}
 
-	let cssButton = Light;
-	if (theme === 'dark') {
-		cssButton = Dark;
-	}
+	const cssButton = theme === 'dark' ? Dark : Light;
 
 	Object.assign(css1, cssButton);
 	Object.assign(css2, cssButton);
@@ -29,7 +26,7 @@ function MenuButton({ theme }) {
 
 	return (
 		<div>
-			<SideMenu active={isActive} theme={theme} isActive={setisActive} />
+			<SideMenu active={isActive} theme={theme} isActive={setIsActive} />
 			<div className="MenuButton " onClick={Click}>
 				<div style={cssButton}></div>
 				<div style={css1}></div>

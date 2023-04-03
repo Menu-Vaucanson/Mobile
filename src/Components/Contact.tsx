@@ -24,10 +24,7 @@ function Contact({ theme }) {
 		content: 'Le code est disponible ici, vous pouvez également apporter des suggestions et rapporter des bugs.'
 	};
 
-	let css = ContactLight;
-	if (theme === 'dark') {
-		css = ContactDark;
-	};
+	const css = theme === 'dark' ? ContactDark : ContactLight;
 
 	return (
 		<div className="Contact" style={css}>

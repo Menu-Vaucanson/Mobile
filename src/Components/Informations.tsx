@@ -36,10 +36,7 @@ function Informations({ theme }) {
 		content: 'Les menus nous sont transmis par l\'établissement. Ils seront disponibles en fin de semaine.'
 	};
 
-	let css = InformationsLight;
-	if (theme === 'dark') {
-		css = InformationsDark;
-	}
+	const css = theme === 'dark' ? InformationsDark : InformationsLight;
 
 	return (
 		<div className="Contact" style={css}>

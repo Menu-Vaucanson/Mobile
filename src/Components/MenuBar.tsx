@@ -7,16 +7,14 @@ import MenuButton from './MenuButton';
 
 
 function MenuBar({ theme }) {
-	let css = MenuBarLight;
-	if (theme === 'dark') {
-		css = MenuBarDark;
-	}
+	const css = theme === 'dark' ? MenuBarDark : MenuBarLight;
 
 	return (
 		<div className="MenuBar" style={css}>
 			<MenuButton theme={theme} />
 			<Link className='MenuBarTitle' style={css} to='/'>Menu Vaucanson</Link>
-			<a className='MenuLogo' href='https://www.yout-ube.com/watch?v=dQw4w9WgXcQ'><img className='MenuLogo' src={Logo} alt='Logo' />
+			<a className='MenuLogo' href='https://www.yout-ube.com/watch?v=dQw4w9WgXcQ'>
+				<img className='MenuLogo' src={Logo} alt='Logo' />
 			</a>
 		</div>
 	);

@@ -35,7 +35,7 @@ function Contributor({ name, desc, img }) {
 }
 
 function Contributors() {
-	let contributors = [
+	const contributors = [
 		{
 			name: 'Wiwok',
 			desc: 'Fondateur, Développeur, Designer',
@@ -53,15 +53,12 @@ function Contributors() {
 		}
 	];
 
-	const C = contributors.map((c, i) => {
-		return <Contributor name={c.name} desc={c.desc} img={c.img} key={i} />
-	});
-
-
 	return (
 		<div className='ContributorsBox'>
 			<div className='ContributorsTitle'>Contributeurs</div>
-			{C}
+			{contributors.map((c, i) => {
+				return <Contributor name={c.name} desc={c.desc} img={c.img} key={i} />
+			})}
 		</div>
 	);
 }
@@ -80,7 +77,7 @@ function TimeLineComp({ title, text, date }) {
 }
 
 function Timeline() {
-	let timelineElements = [
+	const timelineElements: Array<TimeLineElement> = [
 		{
 			title: "Début du projet",
 			description: "Wiwok écrit les premières lignes de code de ce projet.",
@@ -140,7 +137,7 @@ function Timeline() {
 
 	return (
 		<div className="Timeline">
-			{timelineElements.map((t: TimeLineElement, i: number) => {
+			{timelineElements.map((t, i) => {
 				return <TimeLineComp title={t.title} text={t.description} date={t.date} key={i} />
 			})}
 		</div>

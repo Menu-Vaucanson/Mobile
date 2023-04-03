@@ -117,6 +117,7 @@ function MenuSwiper({ menus, isEvening, css, theme }) {
 			}
 		}
 	});
+
 	return (
 		<Swiper effect={"cards"} modules={[EffectCards]}>
 			{rMenus}

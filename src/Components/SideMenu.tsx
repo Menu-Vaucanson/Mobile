@@ -28,13 +28,16 @@ function SideMenu({ active, theme, isActive }) {
 		{
 			title: 'Accueil',
 			link: '/'
-		}, {
+		},
+		{
 			title: 'Projet',
 			link: '/Project'
-		}, {
+		},
+		{
 			title: 'Informations',
 			link: '/Informations'
-		}, {
+		},
+		{
 			title: 'Paramètres',
 			link: '/Settings'
 		}

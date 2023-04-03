@@ -64,10 +64,8 @@ function Rate({ month, day, evening }) {
 	const [StarsCss, setStarsCss] = useState({ 'display': 'none' });
 
 	function sendRate() {
-		let rates = JSON.parse(window.localStorage.getItem('rates') as string);
-		if (rates == null) {
-			rates = [];
-		}
+		const rates = JSON.parse(window.localStorage.getItem('rates') as string) ?? [];
+
 		if (evening) {
 			rates.push(`${month}/${day}e`);
 		} else {
@@ -245,6 +243,7 @@ function Rate({ month, day, evening }) {
 			</div>
 		);
 	}
+
 	return (
 		<div className='MenuRate'>
 			<div className='Stars' style={StarsCss}>

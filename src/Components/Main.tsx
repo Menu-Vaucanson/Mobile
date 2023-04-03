@@ -19,10 +19,7 @@ function Main() {
 		theme = 'light';
 	}
 
-	let css = App;
-	if (theme === 'dark') {
-		css = AppDark;
-	}
+	const css = theme === 'dark' ? AppDark : App;
 
 	return (
 		<div>
