@@ -2,6 +2,12 @@ import Corinan from '../Assets/Corinan.png';
 import Unel from '../Assets/Unel.png';
 import Wiwok from '../Assets/Wiwok.png';
 
+type TimeLineElement = {
+	title: string;
+	description: string;
+	date: string;
+}
+
 function Motivation() {
 	return (
 		<div className='Motivation'>
@@ -132,13 +138,11 @@ function Timeline() {
 		}
 	];
 
-	const T = timelineElements.map((t: { title: string, description: string, date: string }, i: number) => {
-		return <TimeLineComp title={t.title} text={t.description} date={t.date} key={i} />
-	});
-
 	return (
 		<div className="Timeline">
-			{T}
+			{timelineElements.map((t: TimeLineElement, i: number) => {
+				return <TimeLineComp title={t.title} text={t.description} date={t.date} key={i} />
+			})}
 		</div>
 	);
 }
